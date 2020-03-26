@@ -1,4 +1,4 @@
-image: tetraweb/php
+image: php:latest
 
 before_script:
   - apt-get update
@@ -9,3 +9,7 @@ before_script:
   - php composer.phar install
   - npm install
   - npm run deploy
+
+test:app:
+  script:
+  - phpunit --configuration phpunit_myapp.xml
