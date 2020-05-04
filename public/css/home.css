@@ -1,0 +1,12 @@
+.welcome {
+	margin: 3em auto;
+	width: 90%;
+}
+
+.wait {
+	margin-top: 1em;
+}
+
+.wait .signature{
+	color: #13a7af; 
+}
