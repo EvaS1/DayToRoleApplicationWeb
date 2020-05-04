@@ -47,7 +47,7 @@ p {
 	color: #fff;
 	font-family: Avenir;
 	font-size: 0.9em;
-	padding: 3px 25px;
+	padding: 3px 15px;
 	border-radius: 30px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -63,6 +63,11 @@ p {
 	text-decoration: none;
 	color: #fff;
 	background-color: #8cd3d7;
+}
+
+/* Bouton jouer */
+.header-container .button-container .daytorole-btn {
+	padding: 3px 25px;
 }
 
 /* Lien type */
@@ -237,6 +242,10 @@ p {
 
 /* Ordinateurs */
 @media (min-width: 992px) {	
+	main {
+		width: 70%;
+	}
+
 	.banner {
 		padding: 2em;
 	}
@@ -253,7 +262,7 @@ p {
 		align-self: center;
 	}
 
-	.daytorole-btn {
+	.header-container .button-container .daytorole-btn {
 		padding: 3px 30px;
 		font-size: 1em;
 	}
