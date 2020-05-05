@@ -24,6 +24,11 @@ class ArticleBlog
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $Nom_url;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $Description_courte;
 
     /**
@@ -59,6 +64,18 @@ class ArticleBlog
     public function setTitre(string $Titre): self
     {
         $this->Titre = $Titre;
+
+        return $this;
+    }
+
+    public function getNomUrl(): ?string
+    {
+        return $this->Nom_url;
+    }
+
+    public function setNomUrl(string $Nom_url): self
+    {
+        $this->Nom_url = $Nom_url;
 
         return $this;
     }
