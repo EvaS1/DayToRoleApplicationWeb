@@ -19,37 +19,52 @@ class ArticleBlog
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Titre;
+    private $titre;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Nom_url;
+    private $slug;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Description_courte;
+    private $description;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $Date;
+    private $date;
 
     /**
      * @ORM\Column(type="string", length=3000)
      */
-    private $Contenu;
+    private $contenu;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $Auteur;
+    private $auteur;
 
     /**
      * @ORM\Column(type="string", length=350, nullable=true)
      */
-    private $Image;
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $metatitle;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $metadescription;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $metakeywords;
 
     public function getId(): ?int
     {
@@ -58,84 +73,120 @@ class ArticleBlog
 
     public function getTitre(): ?string
     {
-        return $this->Titre;
+        return $this->titre;
     }
 
-    public function setTitre(string $Titre): self
+    public function setTitre(string $titre): self
     {
-        $this->Titre = $Titre;
+        $this->titre = $titre;
 
         return $this;
     }
 
-    public function getNomUrl(): ?string
+    public function getSlug(): ?string
     {
-        return $this->Nom_url;
+        return $this->slug;
     }
 
-    public function setNomUrl(string $Nom_url): self
+    public function setSlug(string $slug): self
     {
-        $this->Nom_url = $Nom_url;
+        $this->slug = $slug;
 
         return $this;
     }
 
-    public function getDescriptionCourte(): ?string
+    public function getDescription(): ?string
     {
-        return $this->Description_courte;
+        return $this->description;
     }
 
-    public function setDescriptionCourte(string $Description_courte): self
+    public function setDescription(string $description): self
     {
-        $this->Description_courte = $Description_courte;
+        $this->description = $description;
 
         return $this;
     }
 
     public function getDate(): ?\DateTimeInterface
     {
-        return $this->Date;
+        return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $Date): self
+    public function setDate(\DateTimeInterface $date): self
     {
-        $this->Date = $Date;
+        $this->date = $date;
 
         return $this;
     }
 
     public function getContenu(): ?string
     {
-        return $this->Contenu;
+        return $this->contenu;
     }
 
-    public function setContenu(string $Contenu): self
+    public function setContenu(string $contenu): self
     {
-        $this->Contenu = $Contenu;
+        $this->contenu = $contenu;
 
         return $this;
     }
 
     public function getAuteur(): ?string
     {
-        return $this->Auteur;
+        return $this->auteur;
     }
 
-    public function setAuteur(string $Auteur): self
+    public function setAuteur(string $auteur): self
     {
-        $this->Auteur = $Auteur;
+        $this->auteur = $auteur;
 
         return $this;
     }
 
     public function getImage(): ?string
     {
-        return $this->Image;
+        return $this->image;
     }
 
-    public function setImage(?string $Image): self
+    public function setImage(?string $image): self
     {
-        $this->Image = $Image;
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getMetatitle(): ?string
+    {
+        return $this->metatitle;
+    }
+
+    public function setMetatitle(string $metatitle): self
+    {
+        $this->metatitle = $metatitle;
+
+        return $this;
+    }
+
+    public function getMetadescription(): ?string
+    {
+        return $this->metadescription;
+    }
+
+    public function setMetadescription(string $metadescription): self
+    {
+        $this->metadescription = $metadescription;
+
+        return $this;
+    }
+
+    public function getMetakeywords(): ?string
+    {
+        return $this->metakeywords;
+    }
+
+    public function setMetakeywords(string $metakeywords): self
+    {
+        $this->metakeywords = $metakeywords;
 
         return $this;
     }

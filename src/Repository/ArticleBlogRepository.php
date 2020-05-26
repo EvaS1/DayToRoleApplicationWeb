@@ -47,4 +47,21 @@ class ArticleBlogRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllOrderedByDate() {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.date', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findLastPublishedArticles($limit) {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.date', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

@@ -200,4 +200,35 @@ class Partie
 
         return $this;
     }
+
+    /**
+     * @return Collection|Session[]
+     */
+    public function getIdSession(): Collection
+    {
+        return $this->id_session;
+    }
+
+    public function addIdSession(Session $idSession): self
+    {
+        if (!$this->id_session->contains($idSession)) {
+            $this->id_session[] = $idSession;
+            $idSession->setIdPartie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdSession(Session $idSession): self
+    {
+        if ($this->id_session->contains($idSession)) {
+            $this->id_session->removeElement($idSession);
+            // set the owning side to null (unless already changed)
+            if ($idSession->getIdPartie() === $this) {
+                $idSession->setIdPartie(null);
+            }
+        }
+
+        return $this;
+    }
 }

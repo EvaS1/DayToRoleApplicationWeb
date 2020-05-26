@@ -48,13 +48,14 @@ class Lore
         return $this->id_scenario;
     }
 
-    public function setIdScenario(Scenario $id_scenario): self
+    public function setIdScenario(?Scenario $id_scenario): self
     {
         $this->id_scenario = $id_scenario;
 
-        // set the owning side of the relation if necessary
-        if ($id_scenario->getIdLore() !== $this) {
-            $id_scenario->setIdLore($this);
+        // set (or unset) the owning side of the relation if necessary
+        $newId_lore = null === $id_scenario ? null : $this;
+        if ($id_scenario->getIdLore() !== $newId_lore) {
+            $id_scenario->setIdLore($newId_lore);
         }
 
         return $this;
