@@ -24,7 +24,7 @@ class StaticPageController extends AbstractController
     }
 
 	/**
-    * @Route("/le-jeu-de-role", name="jeuderole")
+    * @Route("/definition-jeu-de-role", name="jeuderole")
     */
     public function displayJeudeRole()
     {

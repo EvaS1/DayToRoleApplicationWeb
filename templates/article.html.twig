@@ -1,61 +1,41 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ article.metatitle }}</title>
-        {% block stylesheets %}
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}"/>
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-        <link rel="manifest" href="{{ asset('site.webmanifest') }}"/>
-        <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#5bbad5"/>
-        <meta name="msapplication-TileColor" content="#603cba">
-        <meta name="theme-color" content="#ffffff"/>
-        <meta name="description" content="{{ article.metadescription }}">
-        <meta name="keywords" content="{{article.metakeywords}}">
-        <meta name="author" content="{{article.auteur}}">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link href="{{ asset('css/daytorole.css') }}" rel="stylesheet"/>
-        <link href="{{ asset('css/blog.css') }}" rel="stylesheet"/>
-        {% endblock %}
-    </head>
-    <body>
-    	{{ include('_header.html.twig') }}
-        {% block body %} 
-		<main>
-            {% if article %}
-            <div id="breadcrumb">
-                <ul>
-                    <li class="previous-page">
-                        <a class="daytorole-link" href="{{ path('home') }}">Accueil</a>
-                    </li>
-                    <li class="previous-page">
-                        <a class="daytorole-link" href="{{ path('blog') }}">Le blog</a>
-                    </li>
-                    <li class="current-page" aria-current="page">
-                        {{ article.titre }}
-                    </li>
-                </ul>
-            </div>
-            <h1 class="article-title">{{ article.titre }}</h1>
-            <p class="article-data centered-text">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
-            {% if article.image %}
-            <div class="image-container">
-                <img class="article-image" src="{{ asset('images/'~ article.image)}}" alt="">
-            </div>
-            {% endif %}
-            <div class="article-content" >{{ article.contenu|raw }}</div>  
-            {% endif %}              
-        </main>
-        {% endblock %}
-        {{ include('_footer.html.twig') }}
-        {% block javascripts %}
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/daytorole.js') }}"></script>
-        {% endblock %}
-    </body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.metatitle }}{% endblock %}
+
+{% block SEO %}
+<meta name="description" content="{{ article.metadescription }}">
+<meta name="keywords" content="{{article.metakeywords}}">
+<meta name="author" content="{{article.auteur}}">
+{% endblock %}
+
+{% block extrastylesheets %}
+<link href="{{ asset('css/blog.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %} 
+<main>
+    {% if article %}
+    <div id="breadcrumb">
+        <ul>
+            <li class="previous-page">
+                <a class="daytorole-link" href="{{ path('home') }}">Accueil</a>
+            </li>
+            <li class="previous-page">
+                <a class="daytorole-link" href="{{ path('blog') }}">Le blog</a>
+            </li>
+            <li class="current-page" aria-current="page">
+                {{ article.titre }}
+            </li>
+        </ul>
+    </div>
+    <h1 class="article-title">{{ article.titre }}</h1>
+    <p class="article-data centered-text">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
+    {% if article.image %}
+    <div class="image-container">
+        <img class="article-image" src="{{ asset('images/'~ article.image)}}" alt="">
+    </div>
+    {% endif %}
+    <div class="article-content" >{{ article.contenu|raw }}</div>  
+    {% endif %}              
+</main>
+{% endblock %}
