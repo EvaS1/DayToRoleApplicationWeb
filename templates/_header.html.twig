@@ -7,7 +7,7 @@
 			<a href="{{ path('home') }}" class="logo"><img src="{{ asset('images/logo.png') }}" class="logo-dtr" alt="logo"/></a>
 		</div>
 		<div class="col-4 button-container">
-			<a class="daytorole-btn" href="#{#{{ path('') }}#}" role="button">Jouer</a>
+			<a class="daytorole-btn" href="{{ path('connexion') }}" role="button">Jouer</a>
 		</div>
 	</header>
 	<nav class="nav-bar">
@@ -19,19 +19,22 @@
 				<a href="{{ path('home') }}" class="daytorole-link"><img src="{{ asset('images/house.png') }}" class="home-icon" alt="accueil"/></a>
 			</li>
 			<li class="tab">
-				<a href="#" class="daytorole-link">Le jeu de rôle</a>
+				<a href="{{ path('notreoffre') }}" class="daytorole-link">Notre offre</a>
 			</li>
 			<li class="tab">
-				<a href="#" class="daytorole-link">Les scénarios</a>
+				<a href="{{ path('jeuderole') }}" class="daytorole-link">Le jeu de rôle</a>
 			</li>
 			<li class="tab">
-				<a href="#" class="daytorole-link">Le blog</a>
+				<a href="{{ path('scenarios') }}" class="daytorole-link">Les scénarios</a>
 			</li>
 			<li class="tab">
-				<a href="#" class="daytorole-link">Qui sommes-nous ?</a>
+				<a href="{{ path('blog') }}" class="daytorole-link">Le blog</a>
+			</li>
+			<li class="tab">
+				<a href="{{ path('equipe') }}" class="daytorole-link">Qui sommes-nous ?</a>
 			</li>
 			<li class="last tab">
-				<a href="#" class="daytorole-link">Contact</a>
+				<a href="{{ path('contact') }}" class="daytorole-link">Contact</a>
 			</li>
 		</ul>
 	</nav>

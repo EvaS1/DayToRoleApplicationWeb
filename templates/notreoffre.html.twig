@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Aide au Jeu de Rôle, découvre l'offre Day to Role ! - Plateforme et Application{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}"/>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        <link rel="manifest" href="{{ asset('site.webmanifest') }}"/>
+        <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#5bbad5"/>
+        <meta name="msapplication-TileColor" content="#603cba">
+        <meta name="theme-color" content="#ffffff"/>
+        <meta name="description" content="Entre dans l’expérience Day to Role ! Day to Role est une aide au Jeu de Rôle que ce soit pour le meneur de jeu ou les personnages principaux.">
+        <meta name="keywords" content="aide au jeu de rôle">
+        <meta name="author" content="Eugénie">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link href="{{ asset('css/daytorole.css') }}" rel="stylesheet"/>
+        {% endblock %}
+    </head>
+    <body>
+    	{{ include('_header.html.twig') }}
+        {% block body %} 
+		<main>
+            <h1>Notre offre</h1>
+            <p>Entre dans l’expérience Day to Role ! Joue à n’importe quel Jeu de Rôle plus facilement et sans te soucier des différents documents papiers. Day To Role est une aide au Jeu de Rôle, que ce soit pour le <a href="#leader" class="daytorole-link">meneur de jeu</a> ou les <a href="#player" class="daytorole-link">personnages principaux</a>.
+            (<a href="{{ path('jeuderole') }}" class="daytorole-link">Qu’est-ce que le Jeu de Rôle ?</a>)</p>
+            <h2 id="leader">La plateforme : aide au Jeu de Rôle pour le meneur de jeu</h2>
+            <p>CAPTURES DE LA PLATEFORME</p>
+            <h3>Créer un univers</h3>
+            <p>Grâce à la plateforme sur daytorole.com, crée ton histoire de A à Z. Cette aide te permet de construire des fiches de personnages, des scénarios ou cartes. Développe ton propre univers, seule ton imagination est la limite !</p>
+            <p>Si tu fais tes premiers pas en tant que meneur de jeu, pas de panique ! Nous mettons à ta disposition des fiches de personnages, des scénarios et des cartes toutes faites pour toi. Tu n’as plus qu’à jouer !</p>
+            <h3>Centraliser les données</h3>
+            <p>Créer un Jeu de Rôle est un exercice qui demande de l’organisation. Avec le format papier, il est parfois difficile de s’y retrouver entre les différents documents. Avec la plateforme, retrouve tous tes documents au même endroit. Tu ne te perdras plus dans tes feuilles pendant tes parties.</p>
+            <h3> Gérer une partie de Jeu de Rôle</h3>
+            <p>En tant que meneur de jeu, tu dois superviser les parties et les guider. Cela peut être un exercice assez périlleux pour les novices comme pour les plus aguerris. Changements de niveau des joueurs, points de compétences, points de combat ou encore inventaires... Grâce à la plateforme, tu peux suivre les différentes évolutions des personnages pour laisser libre court au jeu des joueurs incarnant les personnages principaux.</p>
+            <p>Au début de la partie, donne un code d’accès que les joueurs vont entrer dans l’application pour leur donner accès à leurs fiche de personnages. Les fiches de personnages sont alors synchronisées vers la plateforme. Il ne te reste plus qu’à jouer. Pour ceux qui le veulent, tu a accès à des dés virtuels.</p>
+            <h3>Suivre</h3>
+            <p>De partie en partie, retrouve sur ton compte tes différentes statistiques : temps passé à jouer, nombre de parties, nombre d’actions réussies… La plateforme permet aussi de réunir les différents joueurs en créant des rendez-vous et grâce à un chat. Retrouve aussi des résumés des parties effectuées pour te remémorer la partie précédente ou tout simplement pour les partager avec tes amis.</p>
+            <a href="{{ path('connexion') }}" class="daytorole-link">Commence à créer ta partie !</a>
+            <h2 id="player">L’application mobile : aide au Jeu de Rôle pour les personnages principaux</h2>
+            <p>CAPTURES DE L'APPLI</p>
+            <p>Si tu incarnes un personnage principal, retrouve ta fiche de personnage sur l’application Day to Role.</p>
+            <p>Plus besoin d’écrire puis d’effacer, puis écrire, puis effacer encore et encore jusqu’à détruire ta pauvre fiche à coups de gomme :’(. L’application est un support qui te permet de te retrouver facilement dans tes points de compétences, combats, vies et dans ton inventaire. Pour effectuer tes actions, tu as accès à un dé virtuel dans l’application. Si tu préfère les dés IRL pas de soucis tu peux désactiver cette fonctionnalité quand tu veux.</p>
+            <p>Retrouve à chaque fin de partie un résumé pour te remémorer ce qu’il s’est passé et le partager avec tes amis. L’application mobile est aussi utile pour pouvoir te souvenir d’une partie précédente avant de commencer la prochaine.</p>
+            <p>Grâce à ton compte joueur, retrouve tes statistiques (performances, actions réussies…) sur le site daytorole.com</p>
+            <a href="#" class="daytorole-link">Télécharger l'appli</a>
+        </main>
+        {% endblock %}
+        {{ include('_footer.html.twig') }}
+        {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/daytorole.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
