@@ -37,7 +37,7 @@ class ArticleBlog
     private $date;
 
     /**
-     * @ORM\Column(type="string", length=3000)
+     * @ORM\Column(type="string", length=5000)
      */
     private $contenu;
 
