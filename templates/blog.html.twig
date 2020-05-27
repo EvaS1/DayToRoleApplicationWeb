@@ -20,8 +20,8 @@
         {% for article in articles %}
         <div class="blog-item col-md-6 col-lg-4">
             <div class="inner">
-                {% if article.image %}
-                <img src="{{ asset('images/'~'7x5-'~ article.image)}}" alt="toutes sortes de dés">
+                {% if article.image and article.alt%}
+                <img src="{{ asset('images/'~'7x5-'~ article.image)}}" alt="{{ article.alt }}">
                 {% else %}
                 <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
                 {% endif %}

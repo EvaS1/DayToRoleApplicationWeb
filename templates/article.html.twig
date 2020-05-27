@@ -30,9 +30,9 @@
     </div>
     <h1 class="article-title">{{ article.titre }}</h1>
     <p class="article-data centered-text">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
-    {% if article.image %}
+    {% if article.image and article.alt %}
     <div class="image-container">
-        <img class="article-image" src="{{ asset('images/'~ article.image)}}" alt="">
+        <img class="article-image" src="{{ asset('images/'~ article.image) }}" alt="{{ article.alt }}">
     </div>
     {% endif %}
     <div class="article-content" >{{ article.contenu|raw }}</div>  
