@@ -19,14 +19,14 @@ function displayMenu() {
 
 function displayHomeStyle() {
 	$('.header-container .nav-bar .house .daytorole-link').on('mouseover focusin', function() {
-		$('.header-container .nav-bar .house .home-icon').attr('src', '/daytorole/daytoroleapplicationweb/public/images/house-hover.png');
+		$('.header-container .nav-bar .house .home-icon').attr('src', '/images/house-hover.png');
 	});
 	
 	$('.header-container .nav-bar .house .daytorole-link').on('click', function() {
-		$('.header-container .nav-bar .house .home-icon').attr('src', '/daytorole/daytoroleapplicationweb/public/images/house-active.png');
+		$('.header-container .nav-bar .house .home-icon').attr('src', '/images/house-active.png');
 	});
 
 	$('.header-container .nav-bar .house .daytorole-link').on('mouseout focusout', function() {
-		$('.header-container .nav-bar .house .home-icon').attr('src', '/daytorole/daytoroleapplicationweb/public/images/house.png');
+		$('.header-container .nav-bar .house .home-icon').attr('src', '/images/house.png');
 	});
 }

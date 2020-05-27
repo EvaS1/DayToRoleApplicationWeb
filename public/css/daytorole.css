@@ -25,7 +25,7 @@ main {
 
 h1 {
 	font-family: Oswald, sans-serif;
-	font-size: 1.5em;
+	font-size: 2em;
 	color: #993030;
 	margin: 1em 0;
 	text-align: center;
@@ -201,6 +201,7 @@ q + .source::before {
 
 .nav-bar .tabs a {
 	font-family: Oswald;
+	font-size: 1.3em;
 }
 
 .nav-bar .tabs .tab.first {
@@ -298,6 +299,7 @@ q + .source::before {
 
 .footer-container .links a {
 	font-family: Oswald;
+	font-size: 1.2em;
 }
 
 .footer-container .logo-container {
