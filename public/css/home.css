@@ -23,6 +23,16 @@
 	margin: 3em 0;
 }
 
+.definition .definition-image img {
+	width: 100%;
+	margin: 3em 0 0;
+}
+
+.explanation .explanation-image img {
+	width: 60%;
+	margin: 0 0 1em;
+}
+
 .blog-item .inner {	
 	height: 100%;
 	padding: 1em;

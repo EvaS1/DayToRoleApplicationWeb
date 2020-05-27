@@ -1,8 +1,13 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
+{% endblock %}
+
 {% block SEO %}
 <meta name="description" content="">
 <meta name="keywords" content="accueil jeu de role day to role">
+<meta name="author" content="Loïs">
 {% endblock %}
 
 {% block extrastylesheets %}
@@ -13,12 +18,12 @@
 <main>
     <div class="welcome">
         <h1>{{ welcome }}</h1>
-        <p class="moto centered-text">Le jeu de rôle n'a jamais été aussi facile !</p>               
+        <p class="moto centered-text">Le Jeu de Rôle n'a jamais été aussi facile !</p>               
     </div>
     <div class="scenarios paragraph">
         <h2>Les derniers scénarios de Jeu de Rôle</h2>
         <p>Rédiger un scénario, penser à toutes les options du jeu, sa durée… ça peut prendre énormément de temps.</p>
-        <p>Day To Role te propose une bibliothèque remplie d’histoires pré-faites pour t’éviter de t’arracher les cheveux !</p>
+        <p>Day To Role te propose une bibliothèque remplie de scénarios pré-faits pour t’éviter de t’arracher les cheveux !</p>
         <a href="{{ path('scenarios') }}" class="daytorole-btn" role="button">Je veux plus de choix</a>
     </div>
     <div class="definition paragraph">
@@ -26,22 +31,28 @@
         <p>Le Jeu de Rôle, c’est vivre une aventure avec ses amis en incarnant un personnage.</p>
         <p>Un meneur de jeu plante le décor et lance les intrigues. Tes amis et toi avancerez dans l’histoire en vous concertant. Laisse aller ton imagination dans des situations folles !</p>
         <a href="{{ path('jeuderole') }}" class="daytorole-btn" role="button">Tout savoir sur le Jeu de Rôle</a>
+        <div class="definition-image">
+            <img src="{{ asset('images/jeu-de-role-de-20.jpg') }}" alt="jeu-de-role-de-20">
+        </div>
     </div>
     <div class="explanation paragraph">
         <h2>Et Day To Role, ça sert à quoi ?</h2>
-        <p>Day To Role t’aide à préparer ta partie de Jeu de Rôle facilement, et à tout coordonner. Plus d’oubli de fiches de personnages ou de dés. Plus besoin de s'emmêler avec les images et les musiques d’ambiance !</p>
+        <p>On t’aide à <strong>préparer une partie de Jeu de Rôle facilement</strong>, et à tout coordonner. Plus d’oubli de fiches de personnages ou de dés. Plus besoin de s'emmêler avec les images et les musiques d’ambiance !</p>
         <h3>La plateforme Day To Role : une aide au Jeu de Rôle pour le meneur de jeu.</h3>
-        <p>Créer des fiches de personnages, des scénarios ou cartes. Développe ton propre univers, ton imagination est la seule limite ! Retrouve aussi des supports pré-faits et centralise toutes tes informations. Tes supports en un clic pour débuter la partie :)</p>
-        <p>Pour inviter tes amis, rien de plus simple : envoie-leur un code sur leur portable pour qu’ils téléchargent l’application mobile Day To Role. Une fois connectés, ils n’auront plus qu’à remplir leur fiche de personnage et la valider pour te l’envoyer.</p>
+        <p><a href="http://jdr-facile.blogspot.com/p/telechargement-de-la-fiche-de.html" class="daytorole-link">Créer des fiches de personnages</a>, des scénarios ou cartes. Développe ton propre univers, ton imagination est la seule limite ! Retrouve aussi des supports pré-faits et centralise toutes tes informations. Tes supports en un clic pour débuter la partie :)</p>
+        <p>Pour inviter tes amis, rien de plus simple : envoie-leur un code sur leur portable pour qu’ils téléchargent l’application mobile Day To Role. Une fois connectés, ils n’auront plus qu’à remplir leur <strong>fiche de personnage</strong> et la valider pour te l’envoyer.</p>
         <p>Tu veux découvrir l’équipe ? La page des curieux, c’est <a href="{{ path('equipe') }}" class="daytorole-link">là</a> ;)</p>
         <h3>L’application mobile : centraliser les informations de chaque joueur</h3>
+        <div class="explanation-image centered-text">
+            <img src="{{ asset('images/application-mobile-day-to-role.jpg') }}" alt="application-mobile-day-to-role">
+        </div>
         <p>Un support qui te permet de te retrouver facilement dans tes points de compétences, combats, vies et dans ton inventaire. Plus de risque de tremper de bière tes fiches de personnage !</p>
-        <p>Et plein d’outils dynamiques ! Des dés virtuels, les statistiques des personnages incarnés…</p>
+        <p>Et plein d’outils dynamiques ! Des <strong>dés virtuels</strong>, les statistiques des personnages incarnés…</p>
         <p>Mais pas d’inquiétude : la convivialité est toujours de mise. Day To Role ne focalisera pas ton attention sur l’écran ;)</p>
     </div>
     <div class="blog paragraph">
-        <h2>Les derniers articles du blog</h2>
-        <p>Découvre les derniers articles publiés ! Et si tu veux TOUS les voir, rends-toi sur le <a href="{{ path('blog') }}" class="daytorole-link">blog</a>, on ajoute régulièrement de nouveaux contenus.</p>
+        <h2>Le blog et les actualités du Jeu de Rôle</h2>
+        <p>Découvre toutes les actualités sur le Jeu de Rôle et des conseils de préparation sur le <a href="{{ path('blog') }}" class="daytorole-link">blog</a> Day To Role.</p>
         <div class="blog-container">
             <div class="row">
             {% if articles %}
@@ -63,14 +74,14 @@
             </div>
         </div>
     </div>
-    <!-- <div class="download paragraph"><h2>Télécharger l’application</h2>
-    <p>Pour tester l’application Day To Role, c’est par ici !</p>
-    <a href="#" class="daytorole-btn" role="button">Télécharger l'application mobile</a>
-    <p>Si tu es meneur de jeu, rends-toi plutôt sur la plateforme Day To Role (lien vers la plateforme)</p></div> -->
     <div class="contact-us paragraph">
         <h2>Nous contacter</h2>
-        <p>Une question ? Une suggestion ? Contacte l'équipe !</p>
-        <a href="{{ path('contact') }}" class="daytorole-btn" role="button">Contact</a>
+        <p>Une question ? Une suggestion ? <a href="{{ path('contact') }}" class="daytorole-link" role="button">Contacte l'équipe !</a></p>
     </div>            
+    <!-- <div class="download paragraph"><h2>Télécharger l’application mobile</h2>
+        <p>Pour tester l’application mobile, c’est par ici !</p>
+        <a href="#" class="daytorole-btn" role="button">Télécharger l'application mobile</a>
+        <p>Si tu es meneur de jeu, rends-toi plutôt sur notre <a href="#" class="daytorole-link">plateforme</a></p>
+    </div> -->
 </main>
 {% endblock %}
