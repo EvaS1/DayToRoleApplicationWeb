@@ -54,6 +54,11 @@ class ArticleBlog
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $alt;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $metatitle;
 
     /**
@@ -187,6 +192,18 @@ class ArticleBlog
     public function setMetakeywords(string $metakeywords): self
     {
         $this->metakeywords = $metakeywords;
+
+        return $this;
+    }
+
+    public function getAlt(): ?string
+    {
+        return $this->alt;
+    }
+
+    public function setAlt(string $alt): self
+    {
+        $this->alt = $alt;
 
         return $this;
     }
