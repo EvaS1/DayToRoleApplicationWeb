@@ -141,8 +141,7 @@ q + .source::before {
 	text-decoration: none;
 }
 
-.daytorole-link:active,
-.daytorole-link:visited {
+.daytorole-link:active {
 	color: #8cd3d7;	
 	text-decoration: none;
 }

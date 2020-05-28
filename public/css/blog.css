@@ -13,6 +13,10 @@
 	height: auto;
 }
 
+.blog-item .article-link {
+	text-decoration: none;
+}
+
 .article-title {
 	margin-bottom: 0.5em;
 }
@@ -22,7 +26,7 @@
 	margin-bottom: 2em;
 }
 
-.article-data.blog {
+.blog-item .article-data.blog {
 	margin-top: 0;
 	margin-bottom: 1em;
 	font-size: 0.8em;
@@ -38,6 +42,29 @@
 }
 
 .article-image {
-	margin-bottom: 1em;
-	max-width: 100%;
+	margin-bottom: 2em;
+	width: 80%;
+}
+
+.idea-divider {
+	display: flex;
+	align-items: center;
+	margin: 2em 5em;
+}
+
+.idea-divider hr {
+	border-top: solid 2px #993030;
+	width: 100%
+}
+
+.idea-divider hr:first-of-type {
+	margin-right: 2em;
+}
+
+.idea-divider img {
+	width: 2em;
+}
+
+.idea-divider hr:last-of-type {
+	margin-left: 2em;
 }

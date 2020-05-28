@@ -20,12 +20,16 @@
         {% for article in articles %}
         <div class="blog-item col-md-6 col-lg-4">
             <div class="inner">
-                {% if article.image and article.alt%}
-                <img src="{{ asset('images/'~'7x5-'~ article.image)}}" alt="{{ article.alt }}">
-                {% else %}
-                <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
-                {% endif %}
-                <h2 class="article-title">{{ article.titre }}</h2>
+                <a href="{{ path('blog_post', {slug: article.slug}) }}">
+                    {% if article.image and article.alt %}
+                    <img src="{{ asset('images/'~'7x5-'~ article.image)}}" alt="{{ article.alt }}">
+                    {% else %}
+                    <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
+                    {% endif %}
+                </a>
+                <a href="{{ path('blog_post', {slug: article.slug}) }}" class="article-link">
+                    <h2 class="article-title">{{ article.titre }}</h2>
+                </a>
                 <p class="article-data blog">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
                 <p>{{ article.description }}</p>
                 <a class="daytorole-btn" href="{{ path('blog_post', {slug: article.slug}) }}" role="button">En lire plus...</a>
