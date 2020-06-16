@@ -203,6 +203,10 @@ q + .source::before {
 	font-size: 1.3em;
 }
 
+.nav-bar .active {
+	color: #13a7af;
+}
+
 .nav-bar .tabs .tab.first {
 	background-color: #993030;
 	text-align: right;
@@ -376,6 +380,11 @@ q + .source::before {
 		align-self: center;
 	}
 
+	.header-container {
+		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);	
+		margin-bottom: 2em;
+	}
+
 	.header-container .button-container .daytorole-btn {
 		padding: 3px 30px;
 		font-size: 1em;
@@ -383,12 +392,11 @@ q + .source::before {
 
 	.nav-bar {
 		padding: 0 0 1em;
-		margin-bottom: 2em;
 		display: block;
 		height: auto;
 		width: 100%;
 		position: static;
-		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);	
+		box-shadow: none;
 	}
 
 	.nav-bar .tabs {
