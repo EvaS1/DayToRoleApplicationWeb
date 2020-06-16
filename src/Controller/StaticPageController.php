@@ -1,9 +1,11 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\ArticleBlog;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ArticleBlogRepository;
 
 class StaticPageController extends AbstractController
 {
@@ -60,7 +62,14 @@ class StaticPageController extends AbstractController
     */
     public function displayPlanSite()
     {
-        return $this->render('plansite.html.twig');
+        $articleBlogRepository = $this
+            ->getDoctrine()
+            ->getRepository(ArticleBlog::class);
+
+        $articles = $articleBlogRepository->findAllOrderedByDate();
+        return $this->render('plansite.html.twig', [
+            'articles' => $articles,
+        ]);
     }
 
     /**
