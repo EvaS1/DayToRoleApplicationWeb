@@ -46,9 +46,22 @@
 	width: 80%;
 }
 
+.article-image[alt="affiche de la cyber conv"] {
+	width: 100%;
+}
+
+.full-width-picture {
+	margin: 1em auto 3em;
+}
+
+.full-width-picture img {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .idea-divider {
 	display: flex;
-	align-items: center;
+	align-items: end;
 	margin: 2em 5em;
 }
 
@@ -62,7 +75,7 @@
 }
 
 .idea-divider img {
-	width: 2em;
+	width: 6em;
 }
 
 .idea-divider hr:last-of-type {
