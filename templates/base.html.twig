@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167583767-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'UA-167583767-1');
+    	<script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+		<script type="text/javascript">
+		tarteaucitron.init({
+		"privacyUrl": "{{ path('confidentialite') }}",
+		"hashtag": "#tarteaucitron",
+		"cookieName": "tarteaucitron",
+		"orientation": "bottom",
+		"showAlertSmall": false,
+		"cookieslist": true,
+		"adblocker": false,
+		"AcceptAllCta" : true,
+		"highPrivacy": false,
+		"handleBrowserDNTRequest": false, 
+		"removeCredit": false,
+		"moreInfoLink": true,
+		"useExternalCss": false,
+		"readmoreLink": "{{ path('confidentialite') }}"
+		});
 		</script>
+		<script type="text/javascript">
+        tarteaucitron.user.gtagUa = 'UA-167583767-1';
+        (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+        </script>
         <meta charset="UTF-8">
         <title>{% block title %}Day To Role{% endblock %}</title>
         {% block SEO %}{% endblock %}
