@@ -21,7 +21,9 @@ final class Version20200326111822 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
-        $this->addSql('CREATE TABLE article_blog (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, description VARCHAR(255) NOT NULL, date DATETIME NOT NULL, contenu VARCHAR(5000) NOT NULL, auteur VARCHAR(50) NOT NULL, metatitle VARCHAR(255) NOT NULL, metadescription VARCHAR(255) NOT NULL, metakeywords VARCHAR(255) NOT NULL, image VARCHAR(350) DEFAULT NULL, alt VARCHAR(255) NOT NULL, UNIQUE(slug), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        
+        $this->addSql('CREATE TABLE article_blog (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, description VARCHAR(255) NOT NULL, date DATETIME NOT NULL, contenu VARCHAR(8000) NOT NULL, auteur VARCHAR(50) NOT NULL, metatitle VARCHAR(255) NOT NULL, metadescription VARCHAR(255) NOT NULL, metakeywords VARCHAR(255) NOT NULL, image VARCHAR(350) DEFAULT NULL, alt VARCHAR(255) NOT NULL, UNIQUE(slug), categorie INT DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE categorie_article (id INT AUTO_INCREMENT NOT NULL, libelle VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE arme_personnage (id_arme INT NOT NULL, id_personnage INT NOT NULL, INDEX IDX_BC1F42C521D9C0A (id_arme), INDEX IDX_BC1F42C55E315342 (id_personnage), PRIMARY KEY(id_arme, id_personnage)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE joueur_succes (id_joueur INT NOT NULL, id_succes INT NOT NULL, INDEX IDX_5679330FA9E2D76C (id_joueur), INDEX IDX_5679330F4EF1B4AB (id_succes), PRIMARY KEY(id_joueur, id_succes)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE joueur_partie (id_joueur INT NOT NULL, id_partie INT NOT NULL, INDEX IDX_EC200FB1A9E2D76C (id_joueur), INDEX IDX_EC200FB1E075F7A4 (id_partie), PRIMARY KEY(id_joueur, id_partie)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -39,6 +41,7 @@ final class Version20200326111822 extends AbstractMigration
         $this->addSql('CREATE TABLE univers_action (id_univers INT NOT NULL, id_action INT NOT NULL, INDEX IDX_D9BA531CF61C0B (id_univers), INDEX IDX_D9BA539D32F035 (id_action), PRIMARY KEY(id_univers, id_action)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE univers_classe (id_univers INT NOT NULL, id_classe INT NOT NULL, INDEX IDX_C89289571CF61C0B (id_univers), INDEX IDX_C89289578F5EA509 (id_classe), PRIMARY KEY(id_univers, id_classe)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE univers_race (id_univers INT NOT NULL, id_race INT NOT NULL, INDEX IDX_44F7344B1CF61C0B (id_univers), INDEX IDX_44F7344B6E59D40D (id_race), PRIMARY KEY(id_univers, id_race)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE article_blog ADD CONSTRAINT FK_7057D6429F34925F FOREIGN KEY (categorie) REFERENCES categorie_article (id)');
         $this->addSql('ALTER TABLE arme_personnage ADD CONSTRAINT FK_BC1F42C521D9C0A FOREIGN KEY (id_arme) REFERENCES arme (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE arme_personnage ADD CONSTRAINT FK_BC1F42C55E315342 FOREIGN KEY (id_personnage) REFERENCES personnage (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE joueur_succes ADD CONSTRAINT FK_5679330FA9E2D76C FOREIGN KEY (id_joueur) REFERENCES joueur (id) ON DELETE CASCADE');
@@ -79,6 +82,7 @@ final class Version20200326111822 extends AbstractMigration
         $this->addSql('ALTER TABLE arme ADD id_univers INT NOT NULL, ADD id_type_arme INT NOT NULL');
         $this->addSql('ALTER TABLE arme ADD CONSTRAINT FK_18207379B97C9CDC FOREIGN KEY (id_univers) REFERENCES univers (id)');
         $this->addSql('ALTER TABLE arme ADD CONSTRAINT FK_182073799FD868D FOREIGN KEY (id_type_arme) REFERENCES type_arme (id)');
+        $this->addSql('CREATE INDEX IDX_7057D6429F34925F ON article_blog (categorie)');
         $this->addSql('CREATE INDEX IDX_18207379B97C9CDC ON arme (id_univers)');
         $this->addSql('CREATE INDEX IDX_182073799FD868D ON arme (id_type_arme)');
         $this->addSql('ALTER TABLE campagne ADD id_univers INT NOT NULL');
@@ -119,6 +123,7 @@ final class Version20200326111822 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('DROP TABLE article_blog');
+        $this->addSql('DROP TABLE categorie_article');
         $this->addSql('DROP TABLE arme_personnage');
         $this->addSql('DROP TABLE joueur_succes');
         $this->addSql('DROP TABLE joueur_partie');
