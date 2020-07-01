@@ -21,6 +21,25 @@
 	margin-bottom: 0.5em;
 }
 
+.article-header {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+}
+
+#article-cat {
+	position: absolute;
+	bottom: -0.9em;
+	background-color: #993030;
+	padding: 1px 10px 2px;
+	color: white;
+	min-width: 50%;
+	max-width: 100%;
+	text-align: center;
+	opacity: 98%;
+}
+
 .article-data {
 	font-size: 0.9em;
 	margin-bottom: 2em;
@@ -38,7 +57,14 @@
 }
 
 .article-data #date {
+	padding-right: 0.5em;
 	padding-left: 0.5em;
+}
+
+.article-data #category {
+	border-left: solid 2px #993030;
+	padding-left: 0.5em;
+	color: #993030;
 }
 
 .article-image {
@@ -80,4 +106,10 @@
 
 .idea-divider hr:last-of-type {
 	margin-left: 2em;
+}
+
+.article-content .copyright {
+	width: 90%;
+	font-size: small;
+	margin-top: -2em;
 }

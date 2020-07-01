@@ -71,6 +71,11 @@ class ArticleBlog
      */
     private $metakeywords;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CategorieArticle", inversedBy="articleBlogs")
+     */
+    private $id_categorie;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -204,6 +209,18 @@ class ArticleBlog
     public function setAlt(string $alt): self
     {
         $this->alt = $alt;
+
+        return $this;
+    }
+
+    public function getIdCategorie(): ?CategorieArticle
+    {
+        return $this->id_categorie;
+    }
+
+    public function setIdCategorie(?CategorieArticle $id_categorie): self
+    {
+        $this->id_categorie = $id_categorie;
 
         return $this;
     }

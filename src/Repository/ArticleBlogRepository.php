@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\ArticleBlog;
+use App\Entity\CategorieArticle;
+use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -19,23 +21,23 @@ class ArticleBlogRepository extends ServiceEntityRepository
         parent::__construct($registry, ArticleBlog::class);
     }
 
-    // /**
-    //  * @return ArticleBlog[] Returns an array of ArticleBlog objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
+    /**
+    /* @return ArticleBlog[] Returns an array of ArticleBlog objects
     */
+    
+    public function findByIdCategorie($idCategorie) {
 
+
+         $qb = $this->createQueryBuilder('a')
+            ->where('a.id_categorie = :idCategorie')
+            ->setParameter('idCategorie', $idCategorie)
+            ->orderBy('a.date', 'DESC');
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+    }
+    
     /*
     public function findOneBySomeField($value): ?ArticleBlog
     {
@@ -49,11 +51,19 @@ class ArticleBlogRepository extends ServiceEntityRepository
     */
 
     public function findAllOrderedByDate() {
-        return $this->createQueryBuilder('a')
-            ->orderBy('a.date', 'DESC')
-            ->getQuery()
-            ->getResult()
-        ;
+        $qb = $this->createQueryBuilder('a')
+                ->orderBy('a.date', 'DESC');
+
+        $qb->innerJoin(
+            CategorieArticle::class,
+            'c',
+            Join::WITH,
+            'a.id_categorie = c.id'
+        );
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
     }
 
     public function findLastPublishedArticles($limit) {
