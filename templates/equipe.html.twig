@@ -1,16 +1,85 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}L'équipe - Day To Role{% endblock %}
+{% block title %}Qui sommes-nous ? Découvre notre équipe Day To Role{% endblock %}
 
 {% block SEO %}
-<meta name="description" content="">
-<meta name="keywords" content="presentation equipe day to role">
+<meta name="description" content="Notre équipe propose Day To Role, une solution d’aide au Jeu de Rôle : une application mobile pour les PNJ, une plateforme pour les meneurs de jeu…">
+<meta name="keywords" content="notre équipe">
+<meta name="author" content="Loïs">
+{% endblock %}
+
+
+{% block extrastylesheets %}
+<link href="{{ asset('css/equipe.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %} 
 <main>
-    <h1>Encore un peu de patience...</h1>
-    <p class="centered-text">Le site est encore en cours de développement, mais tu pourras consulter cette page très prochainement !</p>
-    <p class="centered-text">En attendant, n'hésite pas à aller faire un tour du côté du <a href="{{path('blog')}}" class="daytorole-link">blog</a> !</p>
+    <h1>Qui sommes-nous ?</h1>
+    <p>Tu as sûrement découvert notre offre Day To Role, une solution d’aide au Jeu de Rôle. Mais alors, qui sont les membres de notre équipe ?</p>
+    <p>Derrière Day To Role se cachent 5 étudiants, passionnés par le Jeu de Rôle.</p>
+    <p>Basés en Maine-et-Loire, notre examen de fin d’année a été l’occasion de nous lancer dans ce projet. Nous travaillons de chez nous, à distance, mais avec passion pour te proposer la meilleure solution !</p>
+    <h2>Notre équipe Day To Role</h2>
+    <h3>Le Pôle Développement</h3>
+    <div class="development container">
+    	<div class="row">
+	    	<div class="developer col-lg-4">
+	    		<img src="{{ asset('./images/notre-equipe-day-to-role.png') }}" alt="notre équipe day to role">
+	    		<h4>Antoine</h4>
+	    		<p>Antoine est le porteur de projet, le plus aguerri en Jeu de Rôle. C’est lui qui a détecté différentes problématiques et qui a proposé le concept ! Il est également le développeur de la plateforme.</p>
+	    	</div>
+	    	<div class="developer col-lg-4">
+	    		<img src="{{ asset('./images/bureau-developpement.jpg') }}" alt="bureau développement">
+	    		<h4>Cédric</h4>
+	    		<p>Cédric est le développeur qui s'est consacré à l’application mobile.</p>
+	    	</div>
+	    	<div class="developer col-lg-4">
+	    		<img src="{{ asset('./images/bureau-teletravail.jpg') }}" alt="bureau télétravail">
+	    		<h4>Eva</h4>
+	    		<p>Eva est en charge du développement du site. Elle a également élaboré les maquettes de Day To Role !</p>
+	    	</div>
+	    </div>    	
+    </div>
+    <h3>Le Pôle Marketing</h3>
+    <div class="marketing container">
+    	<div class="row">
+    		<div class="marketer col-lg-6">
+	    		<img src="{{ asset('./images/qui-sommes-nous.jpeg') }}" alt="qui sommes-nous">
+	    		<h4>Eugénie</h4>
+	    		<p>Eugénie est une des deux personnes chargées du webmarketing. Elle écrit des articles du blog et est derrière une partie des posts des réseaux sociaux.</p>
+	    	</div>
+	    	<div class="marketer col-lg-6">
+	    		<img src="{{ asset('./images/equipe-jeu-de-role.jpg') }}" alt="équipe jeu de role">
+	    		<h4>Loïs</h4>
+	    		<p>Loïs est la seconde chargée de webmarketing. Comme Eugénie, elle est derrière le blog et les réseaux. Elle a aussi créé la charte graphique et le logo Day To Role.</p>
+	    	</div>
+    	</div>    	
+    </div>
+    <h2>Tu veux suivre les actualités Day To Role ?</h2>
+    <p>Retrouve-nous sur les réseaux :</p>
+    <div class="social-media-container container">
+    	<div class="row">
+    		<a href="https://www.facebook.com/daytorole/">
+    			<img src="{{ asset('images/facebook.png') }}" class="icon" alt="lien facebook">
+    		</a>
+    		<a href="https://twitter.com/to_role">
+    			<img src="{{ asset('images/twitter.png') }}" class="icon" alt="lien twitter">
+    		</a>
+    		<a href="https://discord.com/channels/707231007165775925/707231008285524020">
+				<img src="{{ asset('images/discord.png') }}" class="icon" alt="lien discord">
+			</a>
+			<a href="https://www.reddit.com/user/DayToRole/">
+				<img src="{{ asset('images/reddit.png') }}" class="icon" alt="lien reddit">
+			</a>
+    	</div>
+    </div>
+    <p>Découvre aussi les <a href="{{ path('blog') }}" class="daytorole-link">actualités Jeu de Rôle</a> sur notre blog.</p>
+    <h2>Qu’est-ce que Day To Role ?</h2>
+    <p>Pour rappel, Day To Role est une solution pour faciliter la préparation et le déroulement d’une partie de Jeu de Rôle.</p>
+    <p>La plateforme permet de centraliser tous vos supports pour animer une partie. Nous te proposons aussi des scénarios et fiches de personnages pré-faits.</p>
+    <p>L’application mobile est dédiée aux joueurs. Tu retrouveras toutes les statistiques de tes parties en cours et terminées. Tu pourras également utiliser des dés virtuels et consulter ta fiche de personnage en temps réel.</p>
+    <p class="centered-text">
+    	<a href="{{ path('notreoffre') }}" class="daytorole-btn">Voir plus d’informations sur notre offre</a>
+    </p>    
 </main>
 {% endblock %}

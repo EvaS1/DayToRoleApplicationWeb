@@ -1,0 +1,47 @@
+.development,
+.marketing {
+	padding: 0;
+}
+
+.marketing {
+	margin-bottom: 2em;
+}
+
+.development img,
+.marketing img {
+	width: 100%;
+	margin-bottom: 1em;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.development .developer h4,
+.marketing .marketer h4 {
+	margin-top: 0.5em;
+}
+
+.social-media-container {
+	margin-bottom: 2em;
+}
+
+.social-media-container .row {
+	justify-content: center;
+}
+
+.social-media-container .icon {
+	background-color: #993030;
+	width: 4em;
+	padding: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
+	border-radius: 3px; 
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.social-media-container .icon:hover,
+.social-media-container .icon:focus {
+	background-color: #13a7af;
+}
+
+.social-media-container .icon:active {
+	background-color: #8cd3d7;
+}

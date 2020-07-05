@@ -65,7 +65,7 @@ class ArticleBlogController extends AbstractController
     }
 
     /**
-     * @Route("blog/{idCategorie}", name="article_by_category", methods={"GET"})
+     * @Route("blog/categorie/{idCategorie}", name="article_by_category", methods={"GET"})
      */
     public function displayArticleByCategory($idCategorie): Response
     {

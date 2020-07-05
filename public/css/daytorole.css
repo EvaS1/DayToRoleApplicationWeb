@@ -35,7 +35,7 @@ h2 {
 	font-family: Avenir, sans-serif;
 	font-size: 1.2em;
 	color: #13a7af;
-	margin-top: 1.2em;
+	margin-top: 1.5em;
 	margin-bottom: 1em;
 }
 
@@ -286,13 +286,6 @@ q + .source::before {
 
 .footer-container .social-media .icon:active {
 	background-color: #8cd3d7;
-}
-
-.footer-container .social-media .disabled .icon,
-.footer-container .social-media .disabled .icon:hover,
-.footer-container .social-media .disabled .icon:focus,
-.footer-container .social-media .disabled .icon:active {
-	background-color: #737373;
 }
  
 .footer-container .links {
