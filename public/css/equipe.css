@@ -24,13 +24,13 @@
 }
 
 .social-media-container .row {
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 .social-media-container .icon {
 	background-color: #993030;
-	width: 4em;
-	padding: 1em;
+	width: 3em;
+	padding: 0.5em;
 	margin-left: 1em;
 	margin-right: 1em;
 	border-radius: 3px; 
