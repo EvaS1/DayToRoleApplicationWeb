@@ -60,7 +60,7 @@ Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
     </div>
     <div class="blog paragraph">
         <h2>Le blog et les actualités du Jeu de Rôle</h2>
-        <p>Découvre toutes les actualités sur le Jeu de Rôle et des conseils de préparation sur le <a href="{{ path('blog') }}" class="daytorole-link">blog</a> Day To Role.</p>
+        <p>Découvre toutes les actualités sur le Jeu de Rôle et des conseils de préparation sur le blog Day To Role.</p>
         <div class="blog-container">
             <div class="row">
             {% if articles %}
@@ -74,13 +74,14 @@ Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
                         {% endif %}
                         <h3 class="article-title">{{ article.titre }}</h3>
                         <p class="article-data blog">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
-                        <a class="daytorole-btn" href="{{ path('blog_post', {slug: article.slug}) }}" role="button">Lire l'article</a>
+                        <a class="daytorole-link" href="{{ path('blog_post', {slug: article.slug}) }}">Lire l'article</a>
                     </div>
                 </div>
                 {% endfor %}
             {% endif %}
             </div>
         </div>
+        <a href="{{ path('blog') }}" class="daytorole-btn" role="button">Voir tous les articles</a>
     </div>
     <div class="contact-us paragraph">
         <h2>Nous contacter</h2>

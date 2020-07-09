@@ -57,6 +57,10 @@
 	margin-bottom: 0;
 }
 
+.blog .blog-container {
+	margin-bottom: 2em;
+}
+
 .blog-item .inner {	
 	height: 100%;
 	padding: 1em;
