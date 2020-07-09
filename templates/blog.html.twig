@@ -33,7 +33,7 @@
                 </a>
                 <p class="article-data blog">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
                 <p>{{ article.description }}</p>
-                <a class="daytorole-btn" href="{{ path('blog_post', {slug: article.slug}) }}" role="button">En lire plus...</a>
+                <a class="daytorole-link" href="{{ path('blog_post', {slug: article.slug}) }}">En lire plus...</a>
             </div>
         </div>
         {% endfor %} 

@@ -12,6 +12,7 @@ Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
 
 {% block extrastylesheets %}
 <link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
+<link href="{{ asset('css/blog.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %} 
@@ -24,13 +25,17 @@ Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
         <h2>Les derniers scénarios de Jeu de Rôle</h2>
         <p>Rédiger un scénario, penser à toutes les options du jeu, sa durée… ça peut prendre énormément de temps.</p>
         <p>Day To Role te propose une bibliothèque remplie de scénarios pré-faits pour t’éviter de t’arracher les cheveux !</p>
-        <a href="{{ path('scenarios') }}" class="daytorole-btn" role="button">Je veux plus de choix</a>
+        <p class="centered-text">
+            <a href="{{ path('scenarios') }}" class="daytorole-btn" role="button">Je veux plus de choix</a>
+        </p>
     </div>
     <div class="definition paragraph">
         <h2>Qu’est-ce que le Jeu de Rôle ?</h2>
         <p>Le Jeu de Rôle, c’est vivre une aventure avec ses amis en incarnant un personnage.</p>
         <p>Un meneur de jeu plante le décor et lance les intrigues. Tes amis et toi avancerez dans l’histoire en vous concertant. Laisse aller ton imagination dans des situations folles !</p>
-        <a href="{{ path('jeuderole') }}" class="daytorole-btn" role="button">Tout savoir sur le Jeu de Rôle</a>
+        <p class="centered-text">
+            <a href="{{ path('jeuderole') }}" class="daytorole-btn" role="button">Tout savoir sur le Jeu de Rôle</a>
+        </p>
         <div class="definition-image centered-text">
             <img src="{{ asset('images/jeu-de-role-de-20.jpg') }}" alt="dés 20 pour jeu de role">
         </div>
@@ -67,13 +72,19 @@ Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
                 {% for article in articles %}
                 <div class="blog-item col-md-6 col-lg-4">
                     <div class="inner">
-                        {% if article.image %}
-                        <img src="{{ asset('images/'~'7x5-'~ article.image)}}" alt="toutes sortes de dés">
-                        {% else %}
-                        <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
-                        {% endif %}
-                        <h3 class="article-title">{{ article.titre }}</h3>
+                        <a class="article-header" href="{{ path('blog_post', {slug: article.slug}) }}">
+                            {% if article.image and article.alt %}
+                            <img src="{{ asset('images/'~'7x5-'~ article.image)}}" alt="{{ article.alt }}">
+                            {% else %}
+                            <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
+                            {% endif %}
+                            <span id="article-cat">{{ article.idCategorie.libelle }}</span>
+                        </a>                    
+                        <a href="{{ path('blog_post', {slug: article.slug}) }}" class="article-link">
+                            <h2 class="article-title">{{ article.titre }}</h2>
+                        </a>
                         <p class="article-data blog">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
+                        <p>{{ article.description }}</p>
                         <a class="daytorole-link" href="{{ path('blog_post', {slug: article.slug}) }}">Lire l'article</a>
                     </div>
                 </div>
@@ -81,7 +92,9 @@ Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
             {% endif %}
             </div>
         </div>
-        <a href="{{ path('blog') }}" class="daytorole-btn" role="button">Voir tous les articles</a>
+        <p class="centered-text">
+            <a href="{{ path('blog') }}" class="daytorole-btn" role="button">Voir tous les articles</a>
+        </p>
     </div>
     <div class="contact-us paragraph">
         <h2>Nous contacter</h2>
