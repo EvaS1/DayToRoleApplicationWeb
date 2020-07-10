@@ -1,0 +1,53 @@
+<footer class="footer-container row">
+	<div class="social-media">
+		<h2 class="centered-text">Suis-nous sur les réseaux !</h2>
+		<ul class="icon-list">
+			<li class="facebook">
+				<a href="https://www.facebook.com/daytorole/">
+					<img src="{{ asset('images/facebook.png') }}" class="icon" alt="lien facebook">
+				</a>
+			</li>
+			<li class="twitter">
+				<a href="https://twitter.com/to_role">
+					<img src="{{ asset('images/twitter.png') }}" class="icon" alt="lien twitter">
+				</a>
+			</li>
+			<li class="discord">
+				<a href="https://discord.com/channels/707231007165775925/707231008285524020">
+					<img src="{{ asset('images/discord.png') }}" class="icon" alt="lien discord">
+				</a>
+			</li>
+			<li class="reddit">
+				<a href="https://www.reddit.com/user/DayToRole/">
+					<img src="{{ asset('images/reddit.png') }}" class="icon" alt="lien reddit">
+				</a>
+			</li>
+		</ul>		
+	</div>
+		<ul class="links">
+			<li>
+				<a href="{{ path('blog') }}" class="daytorole-link">Blog</a>
+			</li>
+			<li>
+				<a href="{{ path('contact') }}" class="daytorole-link">Contact</a>
+			</li>
+			<li>
+				<a href="{{ path('equipe') }}" class="daytorole-link">à propos</a>
+			</li>
+		</ul>
+		<ul class="links">
+			<li>
+				<a href="{{ path('plan') }}" class="daytorole-link">Plan du site</a>
+			</li>
+			<li>
+				<a href="{{ path('confidentialite') }}" class="daytorole-link">Politique de confidentialité</a>
+			</li>
+			<li>
+				<a href="{{ path('cgu') }}" class="daytorole-link">CGU</a>
+			</li>
+		</ul>
+	</div>
+	<div class="logo-container">
+		<a href="{{ path('home') }}" class="logo"><img src="{{ asset('images/logo.png') }}" class="logo-dtr" alt="logo"/></a>
+	</div>
+</footer>

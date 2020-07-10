@@ -1,0 +1,83 @@
+.blog-item {
+	margin-bottom: 2em;
+}
+
+.blog-item .inner {	
+	height: 100%;
+	padding: 1em;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.blog-item .inner img {
+	width: 100%;
+	height: auto;
+}
+
+.blog-item .article-link {
+	text-decoration: none;
+}
+
+.article-title {
+	margin-bottom: 0.5em;
+}
+
+.article-data {
+	font-size: 0.9em;
+	margin-bottom: 2em;
+}
+
+.blog-item .article-data.blog {
+	margin-top: 0;
+	margin-bottom: 1em;
+	font-size: 0.8em;
+}
+
+.article-data #writer {
+	border-right: solid 2px #993030;
+	padding-right: 0.5em;
+}
+
+.article-data #date {
+	padding-left: 0.5em;
+}
+
+.article-image {
+	margin-bottom: 2em;
+	width: 80%;
+}
+
+.article-image[alt="affiche de la cyber conv"] {
+	width: 100%;
+}
+
+.full-width-picture {
+	margin: 1em auto 3em;
+}
+
+.full-width-picture img {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.idea-divider {
+	display: flex;
+	align-items: end;
+	margin: 2em 5em;
+}
+
+.idea-divider hr {
+	border-top: solid 2px #993030;
+	width: 100%
+}
+
+.idea-divider hr:first-of-type {
+	margin-right: 2em;
+}
+
+.idea-divider img {
+	width: 6em;
+}
+
+.idea-divider hr:last-of-type {
+	margin-left: 2em;
+}

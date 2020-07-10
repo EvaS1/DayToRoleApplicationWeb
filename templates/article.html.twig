@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.metatitle }}{% endblock %}
+
+{% block SEO %}
+<meta name="description" content="{{ article.metadescription }}">
+<meta name="keywords" content="{{article.metakeywords}}">
+<meta name="author" content="{{article.auteur}}">
+{% endblock %}
+
+{% block extrastylesheets %}
+<link href="{{ asset('css/blog.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %} 
+<main>
+    {% if article %}
+    <div id="breadcrumb">
+        <ul>
+            <li class="previous-page">
+                <a class="daytorole-link" href="{{ path('home') }}">Accueil</a>
+            </li>
+            <li class="previous-page">
+                <a class="daytorole-link" href="{{ path('blog') }}">Le blog</a>
+            </li>
+            <li class="current-page" aria-current="page">
+                {{ article.titre }}
+            </li>
+        </ul>
+    </div>
+    <h1 class="article-title">{{ article.titre }}</h1>
+    <p class="article-data centered-text">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
+    {% if article.image and article.alt %}
+    <div class="image-container centered-text">
+        <img class="article-image" src="{{ asset('images/'~ article.image) }}" alt="{{ article.alt }}">
+    </div>
+    {% endif %}
+    <div class="article-content" >{{ article.contenu|raw }}</div>  
+    {% endif %}              
+</main>
+{% endblock %}

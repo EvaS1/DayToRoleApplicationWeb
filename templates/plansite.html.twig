@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plan du site - Day To Role{% endblock %}
+        
+{% block SEO %}
+<meta name="description" content="Plan du site daytorole.com">
+<meta name="keywords" content="plan site day to role">
+{% endblock %}
+
+{% block content %} 
+<main>
+    <h1>Plan du site</h1>
+	<p><a href="{{ path('home')}}" class="daytorole-link">Accueil</a></p>
+	<p><a href="{{ path('notreoffre')}}" class="daytorole-link">Notre offre</a></p>
+	<p><a href="{{ path('jeuderole')}}" class="daytorole-link">Le Jeu de Rôle</a></p>
+	<p><a href="{{ path('scenarios')}}" class="daytorole-link">Les scénarios</a></p>
+	<p><a href="{{ path('blog')}}" class="daytorole-link">Le blog</a></p>
+	<ul>
+		{% if articles %}
+            {% for article in articles %}
+            <li><a href="{{ path('blog_post', {slug: article.slug}) }}" class="daytorole-link">{{ article.titre }}</a></li>
+            {% endfor %}
+        {% endif %}
+	</ul>
+	<p><a href="{{ path('equipe')}}" class="daytorole-link">Qui sommes-nous ?</a></p>
+	<p><a href="{{ path('contact')}}" class="daytorole-link">Contact</a></p>
+	<p><a href="{{ path('connexion')}}" class="daytorole-link">Connexion / Inscription</a></p>
+	<p><a href="{{ path('confidentialite')}}" class="daytorole-link">Politique de confidentialité</a></p>
+	<p><a href="{{ path('cgu')}}" class="daytorole-link">Conditions générales d'utilisation</a></p>
+</main>
+{% endblock %}

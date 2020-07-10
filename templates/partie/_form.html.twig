@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+
+
+<div class="contrainer mt-4">
+    <div class="row">
+        <div class="col-md-8"> {{ form_row(form.libelle) }}</div>
+        <div class="col-md-3"> {{ form_row(form.description) }}</div>
+
+    </div>
+    {{ form_rest(form) }}
+</div>
+<button class="btn btn-primary">{{ button|default('Enregistrer') }} </button>
+{{ form_end(form) }}
+
+

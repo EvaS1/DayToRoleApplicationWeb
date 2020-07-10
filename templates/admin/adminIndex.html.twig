@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
+{% endblock %}
+
+{% block SEO %}
+    <meta name="description" content="">
+    <meta name="keywords" content="accueil jeu de role day to role">
+    <meta name="author" content="Loïs">
+{% endblock %}
+
+{% block extrastylesheets %}
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+    <a href="{{ path('partie_index')}}">edit</a>
+    </main>
+{% endblock %}

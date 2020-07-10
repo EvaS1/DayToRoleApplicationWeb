@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block SEO %}
+    <meta name="description" content="">
+    <meta name="keywords" content="connexion jouer day to role">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.messageKey | trans(error.messagedata,'security')}}
+            </div>
+        {% endif %}
+
+        <form action="{{ path('login') }}" method="post">
+            <div class="form-group">
+                <label for=""> Adress Mail</label>
+                <input type="email" id="email" name="_username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password"> Mot de passe</label>
+                <input type="password" id="password" name="_password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+
+        </form>
+
+    </div>
+
+{% endblock %}

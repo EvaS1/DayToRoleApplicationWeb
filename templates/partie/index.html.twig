@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partie index{% endblock %}
+
+{% block body %}
+    <h1>Partie index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Duree</th>
+                <th>Date_debut</th>
+                <th>Date_fin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partie in parties %}
+            <tr>
+                <td>{{ partie.id }}</td>
+                <td>{{ partie.libelle }}</td>
+                <td>{{ partie.description }}</td>
+                <td>{{ partie.duree ? partie.duree|date('H:i:s') : '' }}</td>
+                <td>{{ partie.dateDebut ? partie.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ partie.dateFin ? partie.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('partie_show', {'id': partie.id}) }}">show</a>
+                    <a href="{{ path('partie_edit', {'id': partie.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('partie_new') }}">Create new</a>
+{% endblock %}

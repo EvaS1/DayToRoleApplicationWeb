@@ -1,0 +1,34 @@
+.game {
+	align-items: center;
+}
+
+.game h3 {
+	margin-top: 0;
+}
+
+.game .graphic-element {
+	margin-bottom: 0;
+}
+
+.game .graphic-element img {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.game .graphic-element figcaption {
+	text-align: right;
+	font-size: small;
+}
+
+.player {
+	align-items: center;
+}
+
+.player .player-text p:last-of-type {
+	margin-bottom: 0;
+}
+
+.player img {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

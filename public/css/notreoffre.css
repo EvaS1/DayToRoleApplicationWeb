@@ -1,0 +1,30 @@
+.leader.row {
+	align-items: center;
+}
+
+.leader h3 {
+	margin-top: 0;
+}
+
+.leader .leader-text p:last-of-type {
+	margin-bottom: 0;
+}
+
+.leader img {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.player.row {
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+.player .player-text p:last-of-type {
+	margin-bottom: 0;
+}
+
+.player img {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
