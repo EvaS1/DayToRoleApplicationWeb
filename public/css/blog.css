@@ -91,14 +91,21 @@
 	margin-top: -2em;
 }
 
-.article-content .jdr-film {
-	align-items: center;
-	margin-top: 1em;
-	margin-bottom: 2em;
+.article-content .container {
+	padding: 0;
 }
 
-.article-content .jdr-film img {
+.article-content .container .row {
 	margin-bottom: 1em;
+	align-items: center;
+}
+
+.article-content .container .row img {
+	margin-bottom: 1em;
+}
+
+.article-content .jdr-film {
+	margin-top: 1em;
 }
 
 .article-content h3.support-title a {
@@ -119,4 +126,9 @@
 	.article-content .jdr-film img {
 		margin-bottom: 0;
 	}
+
+	.article-content .container .row img {
+		margin-bottom: 0;
+	}
+
 }
