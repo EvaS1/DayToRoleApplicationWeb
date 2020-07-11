@@ -7,6 +7,11 @@
 	margin-bottom: 2em;
 }
 
+.development .developer:not(:last-of-type),
+.marketing .marketer:not(:last-of-type) {
+	margin-bottom: 2em;
+}
+
 .development img,
 .marketing img {
 	width: 100%;
@@ -24,7 +29,7 @@
 }
 
 .social-media-container .row {
-	justify-content: flex-start;
+	justify-content: center;
 }
 
 .social-media-container .icon {
@@ -44,4 +49,17 @@
 
 .social-media-container .icon:active {
 	background-color: #8cd3d7;
+}
+
+
+/* Tablettes */
+@media (min-width: 768px) {	
+	.development .developer:not(:last-of-type),
+	.marketing .marketer:not(:last-of-type) {
+		margin-bottom: 0;
+	}
+
+	.social-media-container .row {
+		justify-content: flex-start;
+	}
 }
