@@ -24,6 +24,7 @@ final class Version20200326111822 extends AbstractMigration
         
         $this->addSql('CREATE TABLE article_blog (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, description VARCHAR(255) NOT NULL, date DATETIME NOT NULL, contenu VARCHAR(8000) NOT NULL, auteur VARCHAR(50) NOT NULL, metatitle VARCHAR(255) NOT NULL, metadescription VARCHAR(255) NOT NULL, metakeywords VARCHAR(255) NOT NULL, image VARCHAR(350) DEFAULT NULL, alt VARCHAR(255) NOT NULL, UNIQUE(slug), categorie INT DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE categorie_article (id INT AUTO_INCREMENT NOT NULL, libelle VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE contact (id INT AUTO_INCREMENT NOT NULL, datecontact DATETIME NOT NULL, prenom VARCHAR(255) NOT NULL, nom VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, objet VARCHAR(255) NOT NULL, message VARCHAR(500) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE arme_personnage (id_arme INT NOT NULL, id_personnage INT NOT NULL, INDEX IDX_BC1F42C521D9C0A (id_arme), INDEX IDX_BC1F42C55E315342 (id_personnage), PRIMARY KEY(id_arme, id_personnage)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE joueur_succes (id_joueur INT NOT NULL, id_succes INT NOT NULL, INDEX IDX_5679330FA9E2D76C (id_joueur), INDEX IDX_5679330F4EF1B4AB (id_succes), PRIMARY KEY(id_joueur, id_succes)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE joueur_partie (id_joueur INT NOT NULL, id_partie INT NOT NULL, INDEX IDX_EC200FB1A9E2D76C (id_joueur), INDEX IDX_EC200FB1E075F7A4 (id_partie), PRIMARY KEY(id_joueur, id_partie)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -124,6 +125,7 @@ final class Version20200326111822 extends AbstractMigration
 
         $this->addSql('DROP TABLE article_blog');
         $this->addSql('DROP TABLE categorie_article');
+        $this->addSql('DROP TABLE contact');
         $this->addSql('DROP TABLE arme_personnage');
         $this->addSql('DROP TABLE joueur_succes');
         $this->addSql('DROP TABLE joueur_partie');

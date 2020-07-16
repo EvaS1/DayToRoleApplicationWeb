@@ -1,0 +1,24 @@
+.contact-form {
+    margin: auto;
+    color: #737373;
+    font-family: Avenir;
+}
+
+.contact-form .introduction-container {
+	margin: 2em auto;
+}
+
+.contact-form .form-group {
+	margin-bottom: 1.5em;
+}
+
+.contact-form label.required:after {
+    content: " *";
+    color: #993030;
+}
+
+.contact-form .daytorole-btn.btn {
+	border: none;
+	line-height: normal;
+	font-weight: normal;
+}

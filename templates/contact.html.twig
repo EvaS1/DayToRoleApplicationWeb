@@ -3,14 +3,78 @@
 {% block title %}Contact - Day To Role{% endblock %}
         
 {% block SEO %}
-<meta name="description" content="">
+<meta name="description" content="Envoie un message à l'équipe de Day To Role grâce à notre formulaire de contact">
 <meta name="keywords" content="contact equipe day to role">
+{% endblock %}
+
+{% block extrastylesheets %}
+<link href="{{ asset('css/contact.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %} 
 <main>
-    <h1>Encore un peu de patience...</h1>
-    <p class="centered-text">Le site est encore en cours de développement, mais tu pourras consulter cette page très prochainement !</p>
-    <p class="centered-text">En attendant, n'hésite pas à aller faire un tour du côté du <a href="{{path('blog')}}" class="daytorole-link">blog</a> !</p>
+    <h1>Nous contacter</h1>
+    <div class="contact-form col-md-8">
+        
+        {% for message in app.flashes('success') %}
+            <div class="flash-success alert alert-success centered-text" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% if error %}
+            <div class="alert alert-danger centered-text" role="alert">
+                Le formulaire contient au moins une erreur
+            </div>
+        {% endif %}
+
+        <div class="introduction-container">
+            <p class="centered-text">Pour contacter l'équipe, poser toutes tes questions ou obtenir un renseignement, c'est un JEU d'enfant ;)</p>
+            <p class="centered-text">Il te suffit de complèter le formulaire ci-dessous et on te répondra dans les meilleurs délais !</p>
+        </div>
+        
+        <div class="form-container">
+            {{ form_start(form) }}            
+            <div class="form-group">
+                <label for="{{ form.nom.vars.id }}" class="{{ form.nom.vars.required ? 'required' }}">
+                    {{ form.nom.vars.label }}
+                </label>
+                {{ form_errors(form.nom) }}
+                {{ form_widget(form.nom) }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.prenom.vars.id }}" class="{{ form.prenom.vars.required ? 'required' }}">
+                    {{ form.prenom.vars.label }}
+                </label>
+                {{ form_errors(form.prenom) }}
+                {{ form_widget(form.prenom) }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.email.vars.id }}" class="{{ form.email.vars.required ? 'required' }}">
+                    {{ form.email.vars.label }}
+                </label>
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.objet.vars.id }}" class="{{ form.objet.vars.required ? 'required' }}">
+                    {{ form.objet.vars.label }}
+                </label>
+                {{ form_errors(form.objet) }}
+                {{ form_widget(form.objet) }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.message.vars.id }}" class="{{ form.message.vars.required ? 'required' }}">
+                    {{ form.message.vars.label }}
+                </label>
+                {{ form_errors(form.message) }}
+                {{ form_widget(form.message) }}
+            </div>
+            <p class="centered-text">
+                {{ form_widget(form.save, {'attr': {'class': 'daytorole-btn'}}) }}
+            </p>
+            {{ form_end(form) }}        
+        </div>
+    </div>
 </main>
 {% endblock %}

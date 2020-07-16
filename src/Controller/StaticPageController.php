@@ -50,14 +50,6 @@ class StaticPageController extends AbstractController
     }
 
     /**
-    * @Route("/nous-contacter", name="contact")
-    */
-    public function displayContact()
-    {
-        return $this->render('contact.html.twig');
-    }
-
-    /**
     * @Route("/plan-site", name="plan")
     */
     public function displayPlanSite()
