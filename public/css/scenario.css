@@ -1,0 +1,55 @@
+.scenario-item {
+	margin-bottom: 2em;
+}
+
+.scenario-item .inner {	
+	height: 100%;
+	padding: 1em;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.scenario-item .inner img {
+	width: 100%;
+	height: auto;
+}
+
+.scenario-item .scenario-link {
+	text-decoration: none;
+}
+
+.scenario-header {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+}
+
+.scenario-title {
+	margin-bottom: 0.5em;
+	font-family: Oswald;
+	color: #993030;
+	margin-top: 1em;
+}
+
+.scenario-description {
+	color: #13a7af;
+}
+
+.scenario-item .data-container .row {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.scenario-item .scenario-data {
+	display: flex;
+	align-items: center;
+}
+
+.scenario-item .scenario-data img {
+	width: 1em;
+	margin-right: 0.5em;
+}
+
+.scenario-item .scenario-data p {
+	margin-bottom: 0;
+}
