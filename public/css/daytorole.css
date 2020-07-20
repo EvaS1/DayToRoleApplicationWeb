@@ -252,6 +252,41 @@ q + .source::before {
 	color: #737373;
 }
 
+/* Bouton retour haut de page */
+#top-btn {
+  display: inline-block;
+  background-color: #993030;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#top-btn:hover {
+  background-color: #13a7af;
+}
+
+#top-btn:active {
+  background-color: #8cd3d7;
+}
+
+#top-btn img {
+	width: 1.5em;
+}
+
+#top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Footer */
 .footer-container {
 	margin-top: auto;

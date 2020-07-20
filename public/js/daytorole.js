@@ -2,6 +2,7 @@ $(document).ready( function () {
 	displayMenu();
 	addActiveClass();
 	displayHomeStyle();
+	scrollBackToTop();
 })
 
 $(function () {
@@ -21,7 +22,7 @@ function displayMenu() {
 function addActiveClass() {
     var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/"));
     $(".nav-bar ul li a").each(function(){
-        if($(this).attr("href") == "/daytorole/daytoroleapplicationweb/public" + pgurl || $(this).attr("href") == '' ) {
+        if($(this).attr("href") == pgurl || $(this).attr("href") == '' ) {
         	$(this).addClass("active");
         }      
     })
@@ -45,3 +46,20 @@ function displayHomeStyle() {
 		$('.header-container .nav-bar .house .home-icon').attr('src', '/images/house.png');
 	});
 }
+
+function scrollBackToTop() {
+	var btn = $('#top-btn');
+
+	$(window).scroll(function() {
+	  if ($(window).scrollTop() > 300) {
+	    btn.addClass('show');
+	  } else {
+	    btn.removeClass('show');
+	  }
+	});
+
+	btn.on('click', function(e) {
+	  e.preventDefault();
+	  $('html, body').animate({ scrollTop: 0 }, '300');
+	});
+} 
