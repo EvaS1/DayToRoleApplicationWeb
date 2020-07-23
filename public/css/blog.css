@@ -18,6 +18,7 @@
 }
 
 .article-title {
+	font-weight: normal;
 	margin-bottom: 0.5em;
 }
 
@@ -69,10 +70,6 @@
 
 .article-image {
 	margin-bottom: 2em;
-	width: 80%;
-}
-
-.article-image[alt="affiche de la cyber conv"] {
 	width: 100%;
 }
 
@@ -86,7 +83,7 @@
 }
 
 .article-content .copyright {
-	width: 90%;
+	width: 100%;
 	font-size: small;
 	margin-top: -2em;
 }
@@ -108,6 +105,10 @@
 	margin-top: 1em;
 }
 
+.article-content .jdr-film .daytorole-btn {
+	margin-top: 2em;
+}
+
 .article-content h3.support-title a {
 	font-family: 'Avenir';
 	font-weight: bold !important; 
@@ -120,6 +121,21 @@
 	text-decoration: none;
 }
 
+.article-content h3.support-title a::after {
+	content: url(../images/link.png);
+	display: inline-block;
+	margin-left: 0.5em;
+}
+
+.suggestions {
+	margin-top: 4em;
+}
+
+.suggestions hr {
+	border-top: 2px solid #993030;
+	width: 60%;
+	margin-bottom: 4em;
+}
 
 /* Tablettes */
 @media (min-width: 768px) {	
@@ -127,8 +143,45 @@
 		margin-bottom: 0;
 	}
 
-	.article-content .container .row img {
+	.article-content .container {
+		margin: 2em 0;
+	}
+
+	.article-content h2+.container,
+	.article-content h3+.container {
+		margin-top: 0;
+	}
+
+	.article-content .container .row {
+		margin: 0 -15px;
+	}
+
+	.article-content .container .row img,
+	.article-content .container .row p:last-of-type {
 		margin-bottom: 0;
 	}
 
+	.article-content h2.choice-title,
+	.article-content h2.first-game {
+		margin-top: 0;
+	}
+
+	.copyright a::after,
+	.article-content .youtubers a::after,
+	.article-content .other-sounds-sites a::after,
+	.article-content ul.guests a::after {
+		content: "" !important;
+		margin-left: 0 !important;
+	}
+}
+
+/* Ordinateurs */
+@media (min-width: 992px) {	
+	.article-content .container.apocalypse .row {
+		align-items: flex-start;
+	}
+
+	.article-content .container.apocalypse h3 {
+		margin-top: 0;
+	}
 }

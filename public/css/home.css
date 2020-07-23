@@ -25,26 +25,23 @@
 	margin: 3em 0;
 }
 
-.definition .definition-image img {
-	width: 95%;
-	margin: 3em 0 0;
+.dice-image img {
+	width: 100%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 
-.explanation .explanation-row {
-	display: flex;
-	justify-content: space-between;
-	align-items: center; 
+.explanation .row {
+	margin-top: 2em;
 }
 
-.explanation-row img {
-	padding: 0;
+.explanation .row img {
+	width: 100%;
 	margin-bottom: 1em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.explanation .explanation-text p:last-of-type {
+.explanation .row p:last-of-type {
 	margin-bottom: 0;
 }
 
@@ -84,9 +81,12 @@
 	padding-left: 0.5em;
 }
 
+.blog-item .article-description {
+	display: none;
+}
+
 .download {
 	background-color: #993030;
-	width: 80%;
 	margin: 0 auto 2em;
 	padding: 1em;
 	border-radius: 10px;
@@ -126,4 +126,12 @@
 .download .leader-link a:focus {
 	color: #8cd3d7 !important;
 	text-decoration: none;
+}
+
+
+/* Tablettes */
+@media (min-width: 768px) {	
+	.blog-item .article-description {
+		display: block;
+	}
 }

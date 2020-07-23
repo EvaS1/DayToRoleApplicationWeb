@@ -27,6 +27,7 @@
 .scenario-title {
 	margin-bottom: 0.5em;
 	font-family: Oswald;
+	font-weight: normal;
 	color: #993030;
 	margin-top: 1em;
 }
@@ -52,4 +53,32 @@
 
 .scenario-item .scenario-data p {
 	margin-bottom: 0;
+}
+
+.scenario-content .data-container .row {
+	justify-content: center;
+}
+
+.scenario-content .scenario-data {
+	display: flex;
+	align-items: center;
+	padding: 0 2em;
+}
+
+.scenario-content .scenario-data img {
+	width: 1em;
+	margin-right: 0.5em;
+}
+
+.scenario-content .introduction {
+	margin: 2em auto;
+}
+
+.scenario-content .introduction a.begin {
+	margin: 1em 0;
+}
+
+.scenario-content .scenario-image {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }

@@ -34,6 +34,7 @@ h1 {
 h2 {
 	font-family: Avenir, sans-serif;
 	font-size: 1.25em;
+	font-weight: bold;
 	color: #13a7af;
 	margin-top: 1.5em;
 	margin-bottom: 1em;
@@ -125,6 +126,29 @@ q + .source::before {
 	text-decoration: none;
 	color: #fff;
 	background-color: #8cd3d7;
+}
+
+.daytorole-link[target=_blank]::after {
+	content: url(../images/daytorole-link.png);
+	display: inline-block;
+	margin-left: 0.5em;
+}
+.daytorole-link[target=_blank]:hover::after,
+.daytorole-link[target=_blank]:focus::after {
+	content: url(../images/hovered-link.png);
+	display: inline-block;
+	margin-left: 0.5em;
+}
+.daytorole-link[target=_blank]:active::after {
+	content: url(../images/link.png);
+	display: inline-block;
+	margin-left: 0.5em;
+}
+
+.daytorole-btn[target=_blank]::after {
+	content: url(../images/daytorole-btn.png);
+	display: inline-block;
+	margin-left: 0.5em;
 }
 
 /* Bouton jouer */
@@ -297,6 +321,7 @@ q + .source::before {
 	max-width: 100vw;
 }
 
+/* Réseaux sociaux */
 .footer-container .social-media h2 {
 	margin-top: 0;
 }
@@ -443,7 +468,8 @@ q + .source::before {
 		border-bottom: none;
 	}
 	
-	.nav-bar .tabs .first {
+	.nav-bar .tabs .first,
+	.nav-bar .tabs .home {
 		display: none;
 	}	
 
