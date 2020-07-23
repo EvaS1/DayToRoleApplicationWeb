@@ -5,11 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\JoueurRepository")
  */
-class Joueur
+class Joueur implements userInterface,\Serializable
 {
     /**
      * @ORM\Id()
@@ -29,12 +30,12 @@ class Joueur
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=255)
      */
-    private $motdepasse;
+    private $password;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $date_inscription;
 
@@ -105,14 +106,14 @@ class Joueur
         return $this;
     }
 
-    public function getMotdepasse(): ?string
+    public function getPassword(): ?string
     {
-        return $this->motdepasse;
+        return $this->password;
     }
 
-    public function setMotdepasse(string $motdepasse): self
+    public function setPassword(string $password): self
     {
-        $this->motdepasse = $motdepasse;
+        $this->password = $password;
 
         return $this;
     }
@@ -257,5 +258,55 @@ class Joueur
         }
 
         return $this;
+    }
+
+    public function getRoles()
+    {
+        return['ROLE_ADMIN'];
+    }
+
+
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function getUsername()
+    {
+        // TODO: Implement getUsername() method.
+    }
+
+    public function eraseCredentials()
+    {
+
+    }
+
+    public function serialize()
+    {
+        return serialize([
+            $this->id,
+            $this->email,
+            $this->password,
+            $this->pseudo,
+            $this->date_inscription,
+            $this->notes,
+            $this->numero_portable
+
+        ]);
+    }
+
+    public function unserialize($serialized)
+    {
+        list(
+            $this->id,
+            $this->email,
+            $this->password
+            ) = unserialize($serialized,['allowed_classes'=>false]);
+    }
+
+    public function __toString()
+    {
+        return $this->pseudo;
     }
 }

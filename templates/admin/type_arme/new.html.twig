@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypeArme{% endblock %}
+
+{% block body %}
+    <h1>Create new TypeArme</h1>
+
+    {{ include('type_arme/_form.html.twig') }}
+
+    <a href="{{ path('type_arme_index') }}">back to list</a>
+{% endblock %}

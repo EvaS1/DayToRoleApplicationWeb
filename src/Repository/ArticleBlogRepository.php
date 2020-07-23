@@ -25,7 +25,7 @@ class ArticleBlogRepository extends ServiceEntityRepository
     /**
     /* @return ArticleBlog[] Returns an array of ArticleBlog objects
     */
-    
+
     public function findByIdCategorie($idCategorie) {
 
 
@@ -38,7 +38,7 @@ class ArticleBlogRepository extends ServiceEntityRepository
 
         return $query->execute();
     }
-    
+
     /*
     public function findOneBySomeField($value): ?ArticleBlog
     {

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Scenario{% endblock %}
+
+{% block body %}
+    <h1>Create new Scenario</h1>
+
+    {{ include('scenario/_form.html.twig') }}
+
+    <a href="{{ path('scenario_index') }}">back to list</a>
+{% endblock %}

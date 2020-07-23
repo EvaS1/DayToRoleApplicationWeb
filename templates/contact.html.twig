@@ -11,11 +11,11 @@
 <link href="{{ asset('css/contact.css') }}" rel="stylesheet"/>
 {% endblock %}
 
-{% block content %} 
+{% block content %}
 <main>
     <h1>Nous contacter</h1>
     <div class="contact-form col-md-8">
-        
+
         {% for message in app.flashes('success') %}
             <div class="flash-success alert alert-success centered-text" role="alert">
                 {{ message }}
@@ -32,9 +32,9 @@
             <p class="centered-text">Pour contacter l'équipe, poser toutes tes questions ou obtenir un renseignement, c'est un JEU d'enfant &#128521;</p>
             <p class="centered-text">Il te suffit de complèter le formulaire ci-dessous et on te répondra dans les meilleurs délais !</p>
         </div>
-        
+
         <div class="form-container">
-            {{ form_start(form) }}            
+            {{ form_start(form) }}
             <div class="form-group">
                 <label for="{{ form.nom.vars.id }}" class="{{ form.nom.vars.required ? 'required' }}">
                     {{ form.nom.vars.label }}
@@ -73,7 +73,7 @@
             <p class="centered-text">
                 {{ form_widget(form.save, {'attr': {'class': 'daytorole-btn'}}) }}
             </p>
-            {{ form_end(form) }}        
+            {{ form_end(form) }}
         </div>
     </div>
 </main>

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Day To Role - Une aide au Jeu de Rôle - Application mobile et plateforme
+{% endblock %}
+
+{% block SEO %}
+    <meta name="description" content="">
+    <meta name="keywords" content="accueil administration">
+    <meta name="author" content="Antoine">
+{% endblock %}
+
+{% block extrastylesheets %}
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+
+        <a href="{{ path('partie_index') }}" class="daytorole-btn" role="button">Parties</a>
+        <a href="{{ path('action_index') }}" class="daytorole-btn" role="button">Actions</a>
+        <a href="{{ path('arme_index') }}" class="daytorole-btn" role="button">Armes</a>
+        <a href="{{ path('home') }}" class="daytorole-btn" role="button">ArticleBlog</a>
+        <a href="{{ path('campagne_index') }}" class="daytorole-btn" role="button">Campagne</a>
+        <a href="{{ path('classe_index') }}" class="daytorole-btn" role="button">Classe</a>
+        <a href="{{ path('competence_index') }}" class="daytorole-btn" role="button">Compétences</a>
+        <a href="{{ path('complexite_index') }}" class="daytorole-btn" role="button">Complexité</a>
+        <a href="{{ path('difficulte_index') }}" class="daytorole-btn" role="button">Difficulté</a>
+        <a href="{{ path('etat_index') }}" class="daytorole-btn" role="button">Etat</a>
+        <a href="{{ path('groupe_index') }}" class="daytorole-btn" role="button">Groupe</a>
+        <a href="{{ path('joueur_index') }}" class="daytorole-btn" role="button">Joueur</a>
+        <a href="{{ path('lore_index') }}" class="daytorole-btn" role="button">Lore</a>
+        <a href="{{ path('musique_index') }}" class="daytorole-btn" role="button">Musique</a>
+        <a href="{{ path('objet_index') }}" class="daytorole-btn" role="button">Objet</a>
+        <a href="{{ path('race_index') }}" class="daytorole-btn" role="button">Race</a>
+        <a href="{{ path('scenario_index') }}" class="daytorole-btn" role="button">Scénario</a>
+        <a href="{{ path('session_index') }}" class="daytorole-btn" role="button">Session</a>
+        <a href="{{ path('statistiques_index') }}" class="daytorole-btn" role="button">Statistiques</a>
+        <a href="{{ path('succes_index') }}" class="daytorole-btn" role="button">Succes</a>
+        <a href="{{ path('support_visuel_index') }}" class="daytorole-btn" role="button">SupportVisuel</a>
+        <a href="{{ path('type_arme_index') }}" class="daytorole-btn" role="button">TypeArme</a>
+        <a href="{{ path('type_musique_index') }}" class="daytorole-btn" role="button">TypeMusique</a>
+        <a href="{{ path('partie_index') }}" class="daytorole-btn" role="button">Univers</a>
+
+
+</div>
+    </main>
+{% endblock %}

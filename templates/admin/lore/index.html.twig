@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lore index{% endblock %}
+
+{% block body %}
+    <h1>Lore index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fichier</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lore in lores %}
+            <tr>
+                <td>{{ lore.id }}</td>
+                <td>{{ lore.fichier }}</td>
+                <td>
+                    <a href="{{ path('lore_show', {'id': lore.id}) }}">show</a>
+                    <a href="{{ path('lore_edit', {'id': lore.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('lore_new') }}">Create new</a>
+{% endblock %}

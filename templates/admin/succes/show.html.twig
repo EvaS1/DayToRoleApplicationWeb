@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Succes{% endblock %}
+
+{% block body %}
+    <h1>Succes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ succe.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ succe.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ succe.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('succes_index') }}">back to list</a>
+
+    <a href="{{ path('succes_edit', {'id': succe.id}) }}">edit</a>
+
+    {{ include('succes/_delete_form.html.twig') }}
+{% endblock %}

@@ -68,6 +68,7 @@
 	color: #993030;
 }
 
+>>>>>>> ef60b81204389bbb5e2eeafb38447603e5f33c86
 .article-image {
 	margin-bottom: 2em;
 	width: 100%;
@@ -111,11 +112,11 @@
 
 .article-content h3.support-title a {
 	font-family: 'Avenir';
-	font-weight: bold !important; 
+	font-weight: bold !important;
 	color: #8cd3d7 !important;
 }
 
-.article-content h3.support-title a:hover, 
+.article-content h3.support-title a:hover,
 .article-content h3.support-title a:focus {
 	color: #13a7af !important;
 	text-decoration: none;
@@ -138,7 +139,7 @@
 }
 
 /* Tablettes */
-@media (min-width: 768px) {	
+@media (min-width: 768px) {
 	.article-content .jdr-film img {
 		margin-bottom: 0;
 	}

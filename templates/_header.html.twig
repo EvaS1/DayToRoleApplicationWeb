@@ -7,7 +7,7 @@
 			<a href="{{ path('home') }}" class="logo"><img src="{{ asset('images/logo.png') }}" class="logo-dtr" alt="logo"/></a>
 		</div>
 		<div class="col-4 button-container">
-			<a class="daytorole-btn" href="{{ path('connexion') }}" role="button">Jouer</a>
+			<a class="daytorole-btn" href="{{ path('jouer') }}" role="button">Jouer</a>
 		</div>
 	</header>
 	<nav class="nav-bar">
@@ -36,9 +36,14 @@
 			<li class="tab">
 				<a href="{{ path('equipe') }}" class="daytorole-link">Qui sommes-nous ?</a>
 			</li>
-			<li class="last tab">
+			<li class="tab">
 				<a href="{{ path('contact') }}" class="daytorole-link">Contact</a>
 			</li>
+			{% if app.user %}
+			<li class="last tab">
+				<a href="{{ path('logout') }}" class="daytorole-link">Deconnextion</a>
+			</li>
+			{% endif %}
 		</ul>
 	</nav>
 </div>

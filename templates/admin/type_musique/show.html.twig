@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeMusique{% endblock %}
+
+{% block body %}
+    <h1>TypeMusique</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type_musique.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ type_musique.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_musique_index') }}">back to list</a>
+
+    <a href="{{ path('type_musique_edit', {'id': type_musique.id}) }}">edit</a>
+
+    {{ include('type_musique/_delete_form.html.twig') }}
+{% endblock %}

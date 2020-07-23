@@ -73,7 +73,7 @@ class ArticleBlogController extends AbstractController
     public function displayArticleByCategory($idCategorie): Response
     {
         $articles = $this->getDoctrine()->getRepository(ArticleBlog::class)->findByIdCategorie($idCategorie);
-       
+
         if(!$articles){
             throw $this->createNotFoundException('Aucun article dans cette catégorie');
         }

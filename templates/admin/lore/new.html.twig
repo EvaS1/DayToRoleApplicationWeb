@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Lore{% endblock %}
+
+{% block body %}
+    <h1>Create new Lore</h1>
+
+    {{ include('lore/_form.html.twig') }}
+
+    <a href="{{ path('lore_index') }}">back to list</a>
+{% endblock %}

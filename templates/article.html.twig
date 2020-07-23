@@ -27,7 +27,7 @@
                 {{ article.titre }}
             </li>
         </ul>
-    </div> 
+    </div>
     <h1 class="article-title">{{ article.titre }}</h1>
     <p class="article-data centered-text">Par <span id="writer">{{ article.auteur }}</span><span id="date">{{ article.date|date("d/m/Y") }}</span><span id="category">#<a href="{{ path('article_by_category', {idCategorie: article.idCategorie.id}) }}" class="daytorole-link">{{ article.idCategorie.libelle }}</a></span></p>
     {% if article.image and article.alt %}

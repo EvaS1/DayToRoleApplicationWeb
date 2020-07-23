@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Univers{% endblock %}
+
+{% block body %}
+    <h1>Create new Univers</h1>
+
+    {{ include('univers/_form.html.twig') }}
+
+    <a href="{{ path('univers_index') }}">back to list</a>
+{% endblock %}

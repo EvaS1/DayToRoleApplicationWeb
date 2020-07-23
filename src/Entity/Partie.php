@@ -34,7 +34,7 @@ class Partie
     private $duree;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime",nullable=true)
      */
     private $date_debut;
 
@@ -230,5 +230,9 @@ class Partie
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return  $this->libelle;
     }
 }

@@ -6,7 +6,7 @@
 <meta name="description" content="Retrouve la liste des scénarios de Jeux de Rôle disponibles sur Day To Role">
 <meta name="keywords" content="scenario jeu day to role">
 {% endblock %}
-        
+
 {% block extrastylesheets %}
 <link href="{{ asset('css/scenario.css') }}" rel="stylesheet"/>
 {% endblock %}
@@ -16,7 +16,7 @@
     <h1>Les scénarios</h1>
     {# {% if scenarios %} #}
     <div class="container">
-        <div class="row">        	
+        <div class="row">
         {# {% for scenario in scenarios %} #}
         <div class="scenario-item col-md-6 col-lg-4">
             <div class="inner">
@@ -26,10 +26,10 @@
                     {% else %} #}
                     <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
                     {# {% endif %} #}
-                </a>                    
+                </a>
                 <a href="{# LIEN #}" class="scenario-link">
                     <h2 class="scenario-title">Nom du scénario {# scenario.libelle #}</h2>
-                </a>                
+                </a>
                 <p class="scenario-description">Description du scénario {# scenario.description #}</p>
                 <div class="data-container container">
                 	<div class="row">
@@ -50,10 +50,10 @@
             </div>
         </div>
         {# {% endfor %} #}
-        </div> 
+        </div>
     </div>
-    {# {% else %} 
-    <p class="centered-text">Aucun scénario</p>  
+    {# {% else %}
+    <p class="centered-text">Aucun scénario</p>
     {% endif %} #}
 </main>
 {% endblock %}

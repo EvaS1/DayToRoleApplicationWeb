@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Objet{% endblock %}
+
+{% block body %}
+    <h1>Objet</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ objet.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ objet.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ objet.description }}</td>
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ objet.poids }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('objet_index') }}">back to list</a>
+
+    <a href="{{ path('objet_edit', {'id': objet.id}) }}">edit</a>
+
+    {{ include('objet/_delete_form.html.twig') }}
+{% endblock %}

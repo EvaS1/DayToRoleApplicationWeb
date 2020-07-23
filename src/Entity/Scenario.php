@@ -29,7 +29,7 @@ class Scenario
     private $description;
 
     /**
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="time", nullable=true)
      */
     private $duree;
 
@@ -50,13 +50,13 @@ class Scenario
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Difficulte", inversedBy="id_scenario")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $id_difficulte;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Lore", inversedBy="id_scenario", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $id_lore;
 
@@ -72,7 +72,7 @@ class Scenario
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Campagne", inversedBy="id_scenario")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $id_campagne;
 
@@ -104,6 +104,7 @@ class Scenario
     {
         return $this->description;
     }
+
 
     public function setDescription(?string $description): self
     {
@@ -265,5 +266,10 @@ class Scenario
         $this->id_campagne = $id_campagne;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->libelle;
     }
 }

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistiques index{% endblock %}
+
+{% block body %}
+    <h1>Statistiques index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Modificateur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for statistique in statistiques %}
+            <tr>
+                <td>{{ statistique.id }}</td>
+                <td>{{ statistique.libelle }}</td>
+                <td>{{ statistique.description }}</td>
+                <td>{{ statistique.modificateur }}</td>
+                <td>
+                    <a href="{{ path('statistiques_show', {'id': statistique.id}) }}">show</a>
+                    <a href="{{ path('statistiques_edit', {'id': statistique.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('statistiques_new') }}">Create new</a>
+{% endblock %}

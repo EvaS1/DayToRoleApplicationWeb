@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Arme{% endblock %}
+
+{% block body %}
+    <h1>Edit Arme</h1>
+
+    {{ include('admin/arme/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('arme_index') }}">back to list</a>
+
+    {{ include('admin/arme/_delete_form.html.twig') }}
+{% endblock %}

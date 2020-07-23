@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Difficulte index{% endblock %}
+
+{% block body %}
+    <h1>Difficulte index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for difficulte in difficultes %}
+            <tr>
+                <td>{{ difficulte.id }}</td>
+                <td>{{ difficulte.libelle }}</td>
+                <td>
+                    <a href="{{ path('difficulte_show', {'id': difficulte.id}) }}">show</a>
+                    <a href="{{ path('difficulte_edit', {'id': difficulte.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('difficulte_new') }}">Create new</a>
+{% endblock %}

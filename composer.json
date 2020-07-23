@@ -34,6 +34,10 @@
         "twig/extra-bundle": "^3.0"
     },
     "require-dev": {
+        "symfony/yaml": "5.0.*"
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.3",
         "symfony/debug-bundle": "*",
         "symfony/debug-pack": "^1.0",
         "symfony/flex": "^1.6",
