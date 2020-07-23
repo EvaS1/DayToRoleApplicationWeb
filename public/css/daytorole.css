@@ -33,9 +33,9 @@ h1 {
 
 h2 {
 	font-family: Avenir, sans-serif;
-	font-size: 1.2em;
+	font-size: 1.25em;
 	color: #13a7af;
-	margin-top: 1.2em;
+	margin-top: 1.5em;
 	margin-bottom: 1em;
 }
 
@@ -106,12 +106,13 @@ q + .source::before {
 	color: #fff;
 	font-family: Avenir;
 	font-size: 1em;
+	text-decoration: none;
 	padding: 3px 15px;
 	border-radius: 30px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	margin:5px;
+	display: inline-block;
+	text-align: center;
 }
-
 
 .daytorole-btn:hover,
 .daytorole-btn:focus {
@@ -191,6 +192,7 @@ q + .source::before {
 	padding: 0;
 	height: 100vh;
 	display: none;
+	z-index: 1;
 	box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -231,6 +233,7 @@ q + .source::before {
 /* Breadcrumb */
 #breadcrumb ul {
 	display: flex;
+	flex-wrap: wrap;
 	list-style: none;
 	padding: 0;
 	margin-bottom: 3em;
@@ -249,6 +252,41 @@ q + .source::before {
 	color: #737373;
 }
 
+/* Bouton retour haut de page */
+#top-btn {
+  display: inline-block;
+  background-color: #993030;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#top-btn:hover {
+  background-color: #13a7af;
+}
+
+#top-btn:active {
+  background-color: #8cd3d7;
+}
+
+#top-btn img {
+	width: 1.5em;
+}
+
+#top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Footer */
 .footer-container {
 	margin-top: auto;
@@ -256,6 +294,7 @@ q + .source::before {
 	border-top: solid 2px #993030;
 	flex-direction: column;
 	font-family: Oswald, sans-serif;
+	max-width: 100vw;
 }
 
 .footer-container .social-media h2 {
@@ -288,13 +327,6 @@ q + .source::before {
 
 .footer-container .social-media .icon:active {
 	background-color: #8cd3d7;
-}
-
-.footer-container .social-media .disabled .icon,
-.footer-container .social-media .disabled .icon:hover,
-.footer-container .social-media .disabled .icon:focus,
-.footer-container .social-media .disabled .icon:active {
-	background-color: #737373;
 }
  
 .footer-container .links {
@@ -459,5 +491,4 @@ q + .source::before {
 	.footer-container .logo-container .logo-dtr {
 		width: 7em;
 	}
-
 }

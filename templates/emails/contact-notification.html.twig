@@ -1,0 +1,10 @@
+{% apply inline_css(source('@css/email.css')) %}
+	<h1>Nouvelle demande de contact</h1>
+	<p class="centered-text">Un nouveau message vient d'être envoyé à partir du formulaire de contact de Day To Role !</p>
+	<h2>Récapitulatif des informations données</h2>
+	<p><span class="label">Nom :</span> {{ nom }}</p>
+	<p><span class="label">Prénom :</span> {{ prenom }}</p>
+	<p><span class="label">E-mail :</span> {{ addresseEmail }}</p>
+	<p><span class="label">Objet :</span> {{ objet }}</p>
+	<p><span class="label">Message :</span><br> {{ message }}</p>
+{% endapply %}

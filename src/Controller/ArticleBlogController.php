@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\ArticleBlog;
+use App\Entity\CategorieArticle;
 use App\Form\ArticleBlogType;
 use App\Repository\ArticleBlogRepository;
+use App\Repository\CategorieArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -59,6 +61,25 @@ class ArticleBlogController extends AbstractController
 
         return $this->render('article.html.twig', [
             'article' => $article,
+        ]);
+    }
+
+    /**
+     * @Route("blog/categorie/{idCategorie}", name="article_by_category", methods={"GET"})
+     */
+    public function displayArticleByCategory($idCategorie): Response
+    {
+        $articles = $this->getDoctrine()->getRepository(ArticleBlog::class)->findByIdCategorie($idCategorie);
+
+        if(!$articles){
+            throw $this->createNotFoundException('Aucun article dans cette catégorie');
+        }
+
+        $categorie = $this->getDoctrine()->getRepository(CategorieArticle::class)->findOneById($idCategorie);
+
+        return $this->render('categorie.html.twig', [
+            'articles' => $articles,
+            'categorie' => $categorie
         ]);
     }
 

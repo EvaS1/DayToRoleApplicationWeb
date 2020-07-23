@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégorie {{ categorie.libelle }} - Day To Role{% endblock %}
+
+{% block SEO %}
+<meta name="description" content="Retrouve tous les articles de blog de la catégorie {{ categorie.libelle|lower }} !">
+<meta name="keywords" content="{{ categorie.libelle|lower }} categorie article blog">
+{% endblock %}
+        
+{% block extrastylesheets %}
+<link href="{{ asset('css/blog.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %} 
+<main>
+    <h1>Les articles de la catégorie "{{ categorie.libelle }}"</h1>
+    {% if articles %}  
+    <div class="container">
+        <div class="row">
+        {% for article in articles %}
+        <div class="blog-item col-md-6 col-lg-4">
+            <div class="inner">
+                <a class="article-header" href="{{ path('blog_post', {slug: article.slug}) }}">
+                    {% if article.image and article.alt %}
+                    <img src="{{ asset('images/'~'7x5-'~ article.image)}}" alt="{{ article.alt }}">
+                    {% else %}
+                    <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
+                    {% endif %}
+                    <span id="article-cat">{{ article.idCategorie.libelle }}</span>
+                </a>
+                <a href="{{ path('blog_post', {slug: article.slug}) }}" class="article-link">
+                    <h2 class="article-title">{{ article.titre }}</h2>
+                </a>
+                <p class="article-data blog">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
+                <p>{{ article.description }}</p>
+                <a class="daytorole-link" href="{{ path('blog_post', {slug: article.slug}) }}">En lire plus...</a>
+            </div>
+        </div>
+        {% endfor %} 
+        </div> 
+    </div>
+    {% else %} 
+    <p class="centered-text">Aucun article</p>  
+    {% endif %}     
+</main>
+{% endblock %}

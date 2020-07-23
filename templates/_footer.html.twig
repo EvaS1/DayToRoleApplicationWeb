@@ -1,49 +1,51 @@
+<a id="top-btn" title="Retour en haut de la page" role="button"><img src="{{ asset('images/arrow.png') }}" alt="flèche retour en haut"></a>
 <footer class="footer-container row">
 	<div class="social-media">
 		<h2 class="centered-text">Suis-nous sur les réseaux !</h2>
 		<ul class="icon-list">
 			<li class="facebook">
-				<a href="https://www.facebook.com/daytorole/">
+				<a href="https://www.facebook.com/daytorole/" target="_blank">
+
 					<img src="{{ asset('images/facebook.png') }}" class="icon" alt="lien facebook">
 				</a>
 			</li>
 			<li class="twitter">
-				<a href="https://twitter.com/to_role">
+				<a href="https://twitter.com/to_role" target="_blank">
 					<img src="{{ asset('images/twitter.png') }}" class="icon" alt="lien twitter">
 				</a>
 			</li>
 			<li class="discord">
-				<a href="https://discord.com/channels/707231007165775925/707231008285524020">
+				<a href="https://discord.com/channels/707231007165775925/707231008285524020" target="_blank">
 					<img src="{{ asset('images/discord.png') }}" class="icon" alt="lien discord">
 				</a>
 			</li>
-			<li class="reddit">
-				<a href="https://www.reddit.com/user/DayToRole/">
+			<!-- <li class="reddit">
+				<a href="https://www.reddit.com/user/DayToRole/" target="_blank">
 					<img src="{{ asset('images/reddit.png') }}" class="icon" alt="lien reddit">
 				</a>
-			</li>
+			</li> -->
 		</ul>		
 	</div>
 		<ul class="links">
 			<li>
-				<a href="{{ path('blog') }}" class="daytorole-link">Blog</a>
+				<a href="{{ path('equipe') }}" class="daytorole-link">à propos</a>
 			</li>
 			<li>
 				<a href="{{ path('contact') }}" class="daytorole-link">Contact</a>
 			</li>
 			<li>
-				<a href="{{ path('equipe') }}" class="daytorole-link">à propos</a>
+				<a href="{{ path('cgu') }}" class="daytorole-link">CGU</a>
 			</li>
 		</ul>
 		<ul class="links">
+			<li>
+				<a href="{{ path('mentions-legales') }}" class="daytorole-link">Mentions légales</a>
+			</li>
 			<li>
 				<a href="{{ path('plan') }}" class="daytorole-link">Plan du site</a>
 			</li>
 			<li>
 				<a href="{{ path('confidentialite') }}" class="daytorole-link">Politique de confidentialité</a>
-			</li>
-			<li>
-				<a href="{{ path('cgu') }}" class="daytorole-link">CGU</a>
 			</li>
 		</ul>
 	</div>

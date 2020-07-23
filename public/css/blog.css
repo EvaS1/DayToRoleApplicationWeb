@@ -21,6 +21,25 @@
 	margin-bottom: 0.5em;
 }
 
+.article-header {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+}
+
+#article-cat {
+	position: absolute;
+	bottom: -0.9em;
+	background-color: #993030;
+	padding: 1px 10px 2px;
+	color: white;
+	min-width: 50%;
+	max-width: 100%;
+	text-align: center;
+	opacity: 98%;
+}
+
 .article-data {
 	font-size: 0.9em;
 	margin-bottom: 2em;
@@ -38,9 +57,17 @@
 }
 
 .article-data #date {
+	padding-right: 0.5em;
 	padding-left: 0.5em;
 }
 
+.article-data #category {
+	border-left: solid 2px #993030;
+	padding-left: 0.5em;
+	color: #993030;
+}
+
+>>>>>>> ef60b81204389bbb5e2eeafb38447603e5f33c86
 .article-image {
 	margin-bottom: 2em;
 	width: 80%;
@@ -59,25 +86,50 @@
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.idea-divider {
-	display: flex;
-	align-items: end;
-	margin: 2em 5em;
+.article-content .copyright {
+	width: 90%;
+	font-size: small;
+	margin-top: -2em;
 }
 
-.idea-divider hr {
-	border-top: solid 2px #993030;
-	width: 100%
+.article-content .container {
+	padding: 0;
 }
 
-.idea-divider hr:first-of-type {
-	margin-right: 2em;
+.article-content .container .row {
+	margin-bottom: 1em;
+	align-items: center;
 }
 
-.idea-divider img {
-	width: 6em;
+.article-content .container .row img {
+	margin-bottom: 1em;
 }
 
-.idea-divider hr:last-of-type {
-	margin-left: 2em;
+.article-content .jdr-film {
+	margin-top: 1em;
+}
+
+.article-content h3.support-title a {
+	font-family: 'Avenir';
+	font-weight: bold !important;
+	color: #8cd3d7 !important;
+}
+
+.article-content h3.support-title a:hover,
+.article-content h3.support-title a:focus {
+	color: #13a7af !important;
+	text-decoration: none;
+}
+
+
+/* Tablettes */
+@media (min-width: 768px) {
+	.article-content .jdr-film img {
+		margin-bottom: 0;
+	}
+
+	.article-content .container .row img {
+		margin-bottom: 0;
+	}
+
 }

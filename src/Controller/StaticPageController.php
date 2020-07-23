@@ -42,19 +42,19 @@ class StaticPageController extends AbstractController
     }
 
     /**
+    * @Route("/detail-scenario", name="detailscenario")
+    */
+    public function displayDetailScenario()
+    {
+        return $this->render('detailscenario.html.twig');
+    }
+
+    /**
     * @Route("/qui-sommes-nous", name="equipe")
     */
     public function displayEquipe()
     {
         return $this->render('equipe.html.twig');
-    }
-
-    /**
-    * @Route("/nous-contacter", name="contact")
-    */
-    public function displayContact()
-    {
-        return $this->render('contact.html.twig');
     }
 
     /**
@@ -86,6 +86,14 @@ class StaticPageController extends AbstractController
     public function displayCGU()
     {
         return $this->render('cgu.html.twig');
+    }
+
+    /**
+    * @Route("/mentions-legales", name="mentions-legales")
+    */
+    public function displayMentionsLegales()
+    {
+        return $this->render('mentionslegales.html.twig');
     }
 }
 ?>

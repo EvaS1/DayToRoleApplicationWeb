@@ -3,8 +3,8 @@
 {% block title %}Blog - Day To Role{% endblock %}
 
 {% block SEO %}
-<meta name="description" content="">
-<meta name="keywords" content="accueil jeu de role day to role">
+<meta name="description" content="Day To Role te présente toutes les actualités, les conseils et les événements de Jeux de Rôle dans le blog.">
+<meta name="keywords" content="blog articles jeu de role day to role">
 {% endblock %}
         
 {% block extrastylesheets %}
@@ -20,19 +20,20 @@
         {% for article in articles %}
         <div class="blog-item col-md-6 col-lg-4">
             <div class="inner">
-                <a href="{{ path('blog_post', {slug: article.slug}) }}">
+                <a class="article-header" href="{{ path('blog_post', {slug: article.slug}) }}">
                     {% if article.image and article.alt %}
                     <img src="{{ asset('images/'~'7x5-'~ article.image)}}" alt="{{ article.alt }}">
                     {% else %}
                     <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
                     {% endif %}
+                    <span id="article-cat">{{ article.idCategorie.libelle }}</span>
                 </a>
                 <a href="{{ path('blog_post', {slug: article.slug}) }}" class="article-link">
                     <h2 class="article-title">{{ article.titre }}</h2>
                 </a>
                 <p class="article-data blog">Par <span id="writer">{{ article.auteur }} </span><span id="date">{{ article.date|date("d/m/Y") }}</span></p>
                 <p>{{ article.description }}</p>
-                <a class="daytorole-btn" href="{{ path('blog_post', {slug: article.slug}) }}" role="button">En lire plus...</a>
+                <a class="daytorole-link" href="{{ path('blog_post', {slug: article.slug}) }}">En lire plus...</a>
             </div>
         </div>
         {% endfor %} 

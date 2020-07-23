@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "346a0250bb8c30bd9446adbd55b26c3a",
+    "content-hash": "d34bdd86fd62f15e35ef0f4cf8f190ac",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -6082,6 +6082,7 @@
     ],
     "packages-dev": [
         {
+<<<<<<< HEAD
             "name": "doctrine/data-fixtures",
             "version": "1.4.3",
             "source": {
@@ -6242,6 +6243,8 @@
             "time": "2020-04-02T16:40:37+00:00"
         },
         {
+=======
+>>>>>>> ef60b81204389bbb5e2eeafb38447603e5f33c86
             "name": "easycorp/easy-log-handler",
             "version": "v1.0.9",
             "source": {
@@ -6927,6 +6930,10 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
+<<<<<<< HEAD
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
+=======
+    "platform-dev": []
+>>>>>>> ef60b81204389bbb5e2eeafb38447603e5f33c86
 }

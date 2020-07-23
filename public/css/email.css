@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald-Stencil.ttf);
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../fonts/AvenirNextLTPro-Regular.otf);
+}
+
+h1 {
+	font-family: Oswald, sans-serif;
+    font-size: 2em;
+    color: #993030;
+    margin: 1em 0;
+    text-align: center;
+}
+
+h2 {
+    font-family: Avenir, sans-serif;
+	font-size: 1.25em;
+	color: #13a7af;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+
+p {
+	color: #737373;
+}
+
+span.label {
+	font-weight: bold;
+}
+
+.centered-text {
+    text-align: center;
+}

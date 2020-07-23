@@ -5,10 +5,12 @@
 
 .welcome h1 {
 	margin-bottom: 0;
+	font-size: 2.3em !important;
 }
 
 .welcome .moto {
 	color: #13a7af;
+	font-size: 1.2em;
 }
 
 .wait {
@@ -38,21 +40,16 @@
 
 .explanation-row img {
 	padding: 0;
+	margin-bottom: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.explanation-row .picture-right {
-	margin-right: 0;
-	margin-left: 2em;
-}
-
-.explanation-row .picture-left {
-	margin-right: 2em;
-	margin-left: 0;
 }
 
 .explanation .explanation-text p:last-of-type {
 	margin-bottom: 0;
+}
+
+.blog .blog-container {
+	margin-bottom: 1em;
 }
 
 .blog-item .inner {	
@@ -121,8 +118,12 @@
 	margin-top: 2em;
 }
 
+.download .leader-link a {
+	color: #13a7af !important;
+}
+
 .download .leader-link a:hover,
 .download .leader-link a:focus {
-	color: #13a7af !important;
+	color: #8cd3d7 !important;
 	text-decoration: none;
 }
