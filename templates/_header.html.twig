@@ -36,12 +36,16 @@
 			<li class="tab">
 				<a href="{{ path('equipe') }}" class="daytorole-link">Qui sommes-nous ?</a>
 			</li>
+			{% if app.user %}
 			<li class="tab">
 				<a href="{{ path('contact') }}" class="daytorole-link">Contact</a>
 			</li>
-			{% if app.user %}
 			<li class="last tab">
 				<a href="{{ path('logout') }}" class="daytorole-link">Deconnextion</a>
+			</li>
+			{% else %}
+			<li class="last tab">
+				<a href="{{ path('contact') }}" class="daytorole-link">Contact</a>
 			</li>
 			{% endif %}
 		</ul>
