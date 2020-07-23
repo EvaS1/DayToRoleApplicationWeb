@@ -36,6 +36,35 @@
     </div>
     {% endif %}
     <div class="article-content">{{ article.contenu|raw }}</div>  
-    {% endif %}              
+    <div class="suggestions">
+        <hr>
+        <h2 class="centered-text">Découvre d'autres articles</h2>    
+        {% if suggestions %}
+            <div class="blog-container">
+                <div class="row"> 
+                {% for suggestion in suggestions %} 
+                        <div class="blog-item col-md-6 col-lg-4">
+                            <div class="inner">
+                                <a class="article-header" href="{{ path('blog_post', {slug: suggestion.slug}) }}">
+                                    {% if suggestion.image and suggestion.alt %}
+                                    <img src="{{ asset('images/'~'7x5-'~ suggestion.image)}}" alt="{{ suggestion.alt }}">
+                                    {% else %}
+                                    <img src="{{ asset('images/7x5-image-article.jpg') }}" alt="toutes sortes de dés">
+                                    {% endif %}
+                                    <span id="article-cat">{{ suggestion.idCategorie.libelle }}</span>
+                                </a>                    
+                                <a href="{{ path('blog_post', {slug: suggestion.slug}) }}" class="article-link">
+                                    <h2 class="article-title">{{ suggestion.titre }}</h2>
+                                </a>
+                                <p class="article-data blog">Par <span id="writer">{{ suggestion.auteur }} </span><span id="date">{{ suggestion.date|date("d/m/Y") }}</span></p>
+                                <a class="daytorole-link" href="{{ path('blog_post', {slug: suggestion.slug}) }}">Lire l'article</a>
+                            </div>
+                        </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}   
+    {% endif %} 
 </main>
 {% endblock %}

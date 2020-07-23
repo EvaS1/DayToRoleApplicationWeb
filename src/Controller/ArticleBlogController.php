@@ -59,8 +59,11 @@ class ArticleBlogController extends AbstractController
             throw $this->createNotFoundException('L\'article n\'existe pas');
         }
 
+        $suggestions = $this->getDoctrine()->getRepository(ArticleBlog::class)->findRandomArticles(3, $article->getId());
+
         return $this->render('article.html.twig', [
             'article' => $article,
+            'suggestions' => $suggestions
         ]);
     }
 

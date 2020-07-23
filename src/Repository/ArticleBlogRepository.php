@@ -6,6 +6,7 @@ use App\Entity\ArticleBlog;
 use App\Entity\CategorieArticle;
 use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use DoctrineExtensions\Query\Mysql\Rand;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
@@ -73,5 +74,16 @@ class ArticleBlogRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
+    }
+
+    public function findRandomArticles($limit, $idCurrentArticle) {
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager
+            ->createQuery("SELECT a FROM App\Entity\ArticleBlog a WHERE a.id != :idCurrentArticle ORDER BY RAND()")
+            ->setParameter('idCurrentArticle', $idCurrentArticle)
+            ->setMaxResults($limit)
+        ;
+
+        return $query->execute();
     }
 }
