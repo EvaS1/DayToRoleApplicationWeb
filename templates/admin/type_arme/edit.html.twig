@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TypeArme{% endblock %}
+
+{% block body %}
+    <h1>Edit TypeArme</h1>
+
+    {{ include('type_arme/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('type_arme_index') }}">back to list</a>
+
+    {{ include('type_arme/_delete_form.html.twig') }}
+{% endblock %}

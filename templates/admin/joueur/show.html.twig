@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Joueur{% endblock %}
+
+{% block body %}
+    <h1>Joueur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ joueur.id }}</td>
+            </tr>
+            <tr>
+                <th>Pseudo</th>
+                <td>{{ joueur.pseudo }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ joueur.email }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ joueur.password }}</td>
+            </tr>
+            <tr>
+                <th>Date_inscription</th>
+                <td>{{ joueur.dateInscription ? joueur.dateInscription|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>{{ joueur.notes }}</td>
+            </tr>
+            <tr>
+                <th>Numero_portable</th>
+                <td>{{ joueur.numeroPortable }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('joueur_index') }}">back to list</a>
+
+    <a href="{{ path('joueur_edit', {'id': joueur.id}) }}">edit</a>
+
+    {{ include('joueur/_delete_form.html.twig') }}
+{% endblock %}

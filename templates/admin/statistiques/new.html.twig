@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Statistiques{% endblock %}
+
+{% block body %}
+    <h1>Create new Statistiques</h1>
+
+    {{ include('statistiques/_form.html.twig') }}
+
+    <a href="{{ path('statistiques_index') }}">back to list</a>
+{% endblock %}

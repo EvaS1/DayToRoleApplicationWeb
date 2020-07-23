@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeArme index{% endblock %}
+
+{% block body %}
+    <h1>TypeArme index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_arme in type_armes %}
+            <tr>
+                <td>{{ type_arme.id }}</td>
+                <td>{{ type_arme.libelle }}</td>
+                <td>{{ type_arme.description }}</td>
+                <td>
+                    <a href="{{ path('type_arme_show', {'id': type_arme.id}) }}">show</a>
+                    <a href="{{ path('type_arme_edit', {'id': type_arme.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_arme_new') }}">Create new</a>
+{% endblock %}

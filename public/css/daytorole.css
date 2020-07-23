@@ -109,7 +109,9 @@ q + .source::before {
 	padding: 3px 15px;
 	border-radius: 30px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin:5px;
 }
+
 
 .daytorole-btn:hover,
 .daytorole-btn:focus {
@@ -457,4 +459,5 @@ q + .source::before {
 	.footer-container .logo-container .logo-dtr {
 		width: 7em;
 	}
+
 }

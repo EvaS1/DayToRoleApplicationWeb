@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypeMusique{% endblock %}
+
+{% block body %}
+    <h1>Create new TypeMusique</h1>
+
+    {{ include('type_musique/_form.html.twig') }}
+
+    <a href="{{ path('type_musique_index') }}">back to list</a>
+{% endblock %}

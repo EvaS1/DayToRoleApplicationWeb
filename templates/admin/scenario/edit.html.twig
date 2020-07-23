@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Scenario{% endblock %}
+
+{% block body %}
+    <h1>Edit Scenario</h1>
+
+    {{ include('scenario/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('scenario_index') }}">back to list</a>
+
+    {{ include('scenario/_delete_form.html.twig') }}
+{% endblock %}

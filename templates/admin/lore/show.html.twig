@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lore{% endblock %}
+
+{% block body %}
+    <h1>Lore</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ lore.id }}</td>
+            </tr>
+            <tr>
+                <th>Fichier</th>
+                <td>{{ lore.fichier }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('lore_index') }}">back to list</a>
+
+    <a href="{{ path('lore_edit', {'id': lore.id}) }}">edit</a>
+
+    {{ include('lore/_delete_form.html.twig') }}
+{% endblock %}

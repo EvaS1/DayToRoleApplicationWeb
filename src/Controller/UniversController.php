@@ -20,7 +20,7 @@ class UniversController extends AbstractController
      */
     public function index(UniversRepository $universRepository): Response
     {
-        return $this->render('univers/index.html.twig', [
+        return $this->render('admin/univers/index.html.twig', [
             'univers' => $universRepository->findAll(),
         ]);
     }
